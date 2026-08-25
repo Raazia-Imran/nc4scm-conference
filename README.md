@@ -1,4 +1,4 @@
-# NC4SCM Conference 2026
+# GCGC 2027 Conference Website
 
 An immersive multi-page conference website for the National Centre for Sustainable Construction Materials at NED University.
 
@@ -26,7 +26,7 @@ npm run preview
 
 ## Content status
 
-The supplied 2026 research tracks are integrated. Dates, speakers, fees, committee names, submission links, publication information, contact details and partner assets are intentionally marked as placeholders until officially confirmed.
+The client-supplied 2027 research topics, conference dates, expected Lahore venue and official contact email are integrated. Submission deadlines, speakers, fees, committee names, submission links, publication information and partner assets remain marked as placeholders until officially confirmed.
 
 ## Pages
 
