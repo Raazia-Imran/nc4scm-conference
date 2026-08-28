@@ -11,4 +11,4 @@ export const tracks=[
 ];
 export const dates=[['Paper submission deadline','To be announced'],['Notification of acceptance','To be announced'],['Camera-ready submission','To be announced'],['Early-bird registration','To be announced'],['Conference dates','27–28 April 2027']];
 export const people=['Patron-in-Chief','Conference Chair','Conference Co-Chair','Technical Program Chair','Conference Secretary','Publication Chair','Finance Chair','Local Arrangements Chair'];
-export const nav=[['Home','/'],['About','/about'],['Speakers','/speakers'],['Call for Papers','/call-for-papers'],['Programme','/programme'],['Workshops','/workshops'],['Registration','/registration'],['Committees','/committees'],['Partners','/partners'],['Archive','/archive'],['Contact','/contact']];
+export const nav=[['Home','/'],['About','/about'],['Call for Papers','/call-for-papers'],['Programme','/programme'],['Speakers','/speakers'],['Registration','/registration'],['Committees','/committees'],['Partners','/partners'],['Archive','/archive'],['Contact','/contact']];
