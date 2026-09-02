@@ -96,3 +96,30 @@ html,body,#root{width:100%;max-width:100%;overflow-x:clip}main,section,header,fo
 /* Supplied institutional marks use true transparency, without white image panels. */
 .institution-logo img{mix-blend-mode:normal}
 .institution-logo:nth-child(4) img{width:78px;height:78px;padding:10px;border-radius:50%;background:#153c35}
+
+/* Site-wide readability: clearer labels, navigation and supporting copy. */
+body{font-size:16px}
+.eyebrow{font-size:13px;font-weight:800;letter-spacing:.14em;line-height:1.45;text-transform:uppercase}
+.dates .eyebrow{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.topbar{font-size:11px;letter-spacing:.07em}
+.brand small{font-size:9px;line-height:1.4;letter-spacing:.16em}
+nav>a{font-size:12px;font-weight:700;letter-spacing:.055em}
+.button{font-size:12px;letter-spacing:.075em}
+.hero-side>span,.hero-side div{font-size:12px}
+.section p,.page-hero p{font-size:16px;color:#465b57}
+.page-hero p{font-size:18px;color:#c4cfcd}
+.dates>div:first-child p{color:#c8d3d1}
+.metrics span{font-size:12px;letter-spacing:.1em}
+.track-card>span,.track-card p{font-size:12px}
+.track-card p{font-size:14px;line-height:1.6}
+.submission-steps article>b,.track-group summary b,.track-group summary>span,.download-card small,.submission-links small{font-size:11px}
+.submission-steps p,.download-card p{font-size:15px}
+.cycle-step p{font-size:13px;line-height:1.55}
+.cycle-step>b,.cycle-core small{font-size:11px}
+.speaker small,.person small,.session small,.workshop>span,.price>span,.contact label{font-size:11px;line-height:1.45}
+.value p,.archive-card p,.price ul,.muted{font-size:14px}
+footer{font-size:14px}footer h4,.copyright{font-size:11px}
+
+@media(max-width:1280px){nav>a{font-size:10.5px}}
+@media(max-width:1100px){.navigation-shell header nav>a{font-size:12px}}
+@media(max-width:700px){.eyebrow,.dates .eyebrow{font-size:12px;letter-spacing:.11em}.topbar{font-size:10px}.section p{font-size:15px}.page-hero p{font-size:16px}}
