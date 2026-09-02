@@ -123,3 +123,7 @@ footer{font-size:14px}footer h4,.copyright{font-size:11px}
 @media(max-width:1280px){nav>a{font-size:10.5px}}
 @media(max-width:1100px){.navigation-shell header nav>a{font-size:12px}}
 @media(max-width:700px){.eyebrow,.dates .eyebrow{font-size:12px;letter-spacing:.11em}.topbar{font-size:10px}.section p{font-size:15px}.page-hero p{font-size:16px}}
+
+/* Official NC4SCM identity supplied by the conference team. */
+.nc4scm-logo b,.nc4scm-logo small{display:none}
+.nc4scm-logo:before{content:'';display:block;width:100%;height:92px;background:url('/images/logos/nc4scm.png') center/contain no-repeat}
