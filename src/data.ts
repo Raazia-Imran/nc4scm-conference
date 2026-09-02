@@ -17,14 +17,14 @@ export const trackGroups=[
 ] as const;
 
 export const dates=[
-  ['Call for Papers Opens','15 September 2026'],
-  ['Paper Submission Deadline','1 January 2027'],
-  ['First Review Decision','15 January 2027'],
-  ['Revised Paper Submission','30 January 2027'],
-  ['Final Acceptance Notification','15 February 2027'],
-  ['Camera-Ready Paper Submission','25 February 2027'],
-  ['Author Registration Deadline','1 March 2027'],
-  ['GCGC 2027 Conference','27–28 April 2027']
+  ['Call for papers opens','15 September 2026'],
+  ['Paper submission deadline','1 January 2027'],
+  ['First review decision','15 January 2027'],
+  ['Revised paper submission','30 January 2027'],
+  ['Final acceptance notification','15 February 2027'],
+  ['Camera-ready paper submission','25 February 2027'],
+  ['Author registration deadline','1 March 2027'],
+  ['GCGC 2027 conference','27–28 April 2027']
 ] as const;
 export const people=['Patron-in-Chief','Conference Chair','Conference Co-Chair','Technical Program Chair','Conference Secretary','Publication Chair','Finance Chair','Local Arrangements Chair'];
 export const nav=[['Home','/'],['About','/about'],['Call for Papers','/call-for-papers'],['Programme','/programme'],['Speakers','/speakers'],['Registration','/registration'],['Committees','/committees'],['Partners','/partners'],['Archive','/archive'],['Contact','/contact']];
