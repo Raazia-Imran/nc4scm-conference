@@ -419,25 +419,30 @@ function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15 }}
           >
-            GCGC <em>2027</em>{" "}
-            <small>Global Conference on Green Construction Materials</small>
+            <span>Global Conference on Green Construction Materials</span>{" "}
+            <em>(GCGC 2027)</em>
           </motion.h1>
           <motion.h2
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.25 }}
           >
-            Global Conference on Green Construction
-            <br />
-            Materials and Practices
+            Advancing sustainable infrastructure through research and practice
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.35 }}
           >
-            Powered by the National Center for Sustainable Construction
-            Materials (NC4SCM)
+            GCGC 2027 brings researchers, engineers, industry leaders and
+            policymakers to Karachi for focused exchange on sustainable
+            infrastructure and low-carbon construction. Powered by the National
+            Center for Sustainable Construction Materials (NC4SCM) at NED
+            University, the conference connects academic evidence with practical
+            solutions for cement, concrete and the built environment. Authors
+            are invited to contribute across three paper-submission tracks:
+            green construction materials, sustainable construction, and case
+            studies and best practices.
           </motion.p>
           <Countdown />
           <motion.div
