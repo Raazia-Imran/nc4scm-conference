@@ -419,30 +419,24 @@ function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15 }}
           >
-            <span>Global Conference on Green Construction Materials</span>{" "}
-            <em>(GCGC 2027)</em>
+            GCGC <em>2027</em>
           </motion.h1>
           <motion.h2
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.25 }}
           >
-            Advancing sustainable infrastructure through research and practice
+            Global Conference on Green Construction
+            <br />
+            Materials and Practices
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.35 }}
           >
-            GCGC 2027 brings researchers, engineers, industry leaders and
-            policymakers to Karachi for focused exchange on sustainable
-            infrastructure and low-carbon construction. Powered by the National
-            Center for Sustainable Construction Materials (NC4SCM) at NED
-            University, the conference connects academic evidence with practical
-            solutions for cement, concrete and the built environment. Authors
-            are invited to contribute across three paper-submission tracks:
-            green construction materials, sustainable construction, and case
-            studies and best practices.
+            Powered by the National Center for Sustainable Construction
+            Materials (NC4SCM)
           </motion.p>
           <Countdown />
           <motion.div
@@ -552,9 +546,8 @@ function Home() {
         <Reveal>
           <p>
             Building materials contribute nearly 11% of global CO₂ emissions.
-            This green construction materials conference in 2027 brings
-            industry, academia, and government together in Karachi to advance
-            low-carbon cement and concrete research.
+            GCGC brings industry, academia, and government together on one
+            platform to share ideas, collaborate, and mitigate this impact.
           </p>
           <Button to="/about" ghost>
             Discover our purpose
@@ -740,13 +733,13 @@ function About() {
     <>
       <PageHero
         eyebrow="ABOUT GCGC 2027"
-        title="A sustainable construction symposium for research and practice"
-        copy="GCGC 2027 Pakistan is a focused international forum for green construction materials, sustainable infrastructure research and low-carbon building practice in Karachi."
+        title="An event designed to move research into practice"
+        copy="A focused international forum for green construction materials, sustainable production and low-carbon building practice"
       />
       <section className="about-reference section">
         <Reveal>
           <span className="eyebrow dark">OUR PURPOSE</span>
-          <h2>Low-carbon cement and concrete research for climate action</h2>
+          <h2>Connecting materials research with climate action</h2>
         </Reveal>
         <Reveal className="about-copy">
           <h3>One platform for shared action</h3>
@@ -913,8 +906,8 @@ function CallForPapers() {
     <>
       <PageHero
         eyebrow="CALL FOR PAPERS"
-        title="Call for papers in green construction materials"
-        copy="Submit original research through the GCGC 2027 EasyChair process for sustainable construction, waste-derived materials and applied low-carbon practice."
+        title="Research with real-world consequence"
+        copy="We invite original research advancing low-carbon construction materials, sustainable construction and applied practice"
       />
       <section className="paper-intro section">
         <Reveal className="paper-statement">
