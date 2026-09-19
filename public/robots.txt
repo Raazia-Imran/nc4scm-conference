@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gcgc.nc4scm.com/sitemap.xml
