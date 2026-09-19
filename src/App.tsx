@@ -419,7 +419,8 @@ function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15 }}
           >
-            GCGC <em>2027</em> <small>Pakistan</small>
+            GCGC <em>2027</em>{" "}
+            <small>Global Conference on Green Construction Materials</small>
           </motion.h1>
           <motion.h2
             initial={{ opacity: 0 }}
