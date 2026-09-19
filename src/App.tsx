@@ -15,6 +15,7 @@ import {
   FileText,
   FlaskConical,
   Handshake,
+  Hotel,
   Images,
   Leaf,
   Mail,
@@ -48,7 +49,7 @@ function Header() {
   return (
     <div className={`navigation-shell ${scrolled ? "is-scrolled" : ""}`}>
       <div className="topbar">
-        <span>27–28 APRIL 2027 · LAHORE</span>
+        <span>10–11 APRIL 2027 · KARACHI</span>
         <a href="mailto:nc4scm@cloud.neduet.edu.pk">
           <Mail size={14} /> nc4scm@cloud.neduet.edu.pk
         </a>
@@ -68,7 +69,11 @@ function Header() {
         <nav className={open ? "open" : ""}>
           {headerNav.map(([n, p]) => (
             <Link className={loc.pathname === p ? "active" : ""} key={p} to={p}>
-              {p === "/call-for-papers" ? "Papers" : n}
+              {p === "/call-for-papers"
+                ? "Papers"
+                : p === "/accommodation"
+                  ? "Stay"
+                  : n}
             </Link>
           ))}
           <Link
@@ -130,9 +135,9 @@ function Footer() {
       <div>
         <h4>Contact</h4>
         <p>
-          Lahore, Pakistan
+          Karachi, Pakistan
           <br />
-          27–28 April 2027
+          10–11 April 2027
         </p>
         <a href="mailto:nc4scm@cloud.neduet.edu.pk">
           nc4scm@cloud.neduet.edu.pk
@@ -207,7 +212,7 @@ function Button({
   );
 }
 function Countdown() {
-  const target = new Date("2027-04-27T09:00:00+05:00").getTime();
+  const target = new Date("2027-04-10T09:00:00+05:00").getTime();
   const [left, setLeft] = useState(() => Math.max(0, target - Date.now()));
   useEffect(() => {
     const timer = window.setInterval(
@@ -224,7 +229,7 @@ function Countdown() {
     total % 60,
   ];
   return (
-    <div className="countdown" aria-label="Countdown to 27 April 2027">
+    <div className="countdown" aria-label="Countdown to 10 April 2027">
       {values.map((value, index) => (
         <div key={index}>
           <b>{String(value).padStart(2, "0")}</b>
@@ -406,7 +411,7 @@ function Home() {
             animate={{ opacity: 1 }}
             className="eyebrow"
           >
-            27–28 APRIL 2027 · LAHORE
+            10–11 APRIL 2027 · KARACHI
           </motion.span>
           <motion.h1
             className="conference-name"
@@ -414,7 +419,7 @@ function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15 }}
           >
-            GCGC <em>2027</em>
+            GCGC <em>2027</em> <small>Pakistan</small>
           </motion.h1>
           <motion.h2
             initial={{ opacity: 0 }}
@@ -456,7 +461,7 @@ function Home() {
             Applied practice
           </b>
           <div>
-            <MapPin size={17} /> Lahore, Pakistan
+            <MapPin size={17} /> Karachi, Pakistan
           </div>
         </div>
       </section>
@@ -541,8 +546,9 @@ function Home() {
         <Reveal>
           <p>
             Building materials contribute nearly 11% of global CO₂ emissions.
-            GCGC brings industry, academia, and government together on one
-            platform to share ideas, collaborate, and mitigate this impact.
+            This green construction materials conference in 2027 brings
+            industry, academia, and government together in Karachi to advance
+            low-carbon cement and concrete research.
           </p>
           <Button to="/about" ghost>
             Discover our purpose
@@ -598,11 +604,11 @@ function Home() {
           <span>Research areas</span>
         </div>
         <div>
-          <b>27–28</b>
+          <b>10–11</b>
           <span>April 2027</span>
         </div>
         <div>
-          <b>Lahore</b>
+          <b>Karachi</b>
           <span>Conference city</span>
         </div>
       </section>
@@ -647,7 +653,7 @@ function Home() {
         <Reveal className="reel-overlay compact-reel-overlay">
           <div>
             <span>GCGC 2025 · KARACHI</span>
-            <h2>Conference in motion</h2>
+            <h2>Highlights from GCGC 2025</h2>
           </div>
           <Link className="reel-link" to="/archive">
             <span>VIEW THE 2025 ARCHIVE</span>
@@ -701,7 +707,7 @@ function Home() {
 function CTA() {
   return (
     <section className="cta">
-      <span className="eyebrow">GCGC 2027 · LAHORE</span>
+      <span className="eyebrow">GCGC 2027 · KARACHI</span>
       <h2>Advance low-carbon construction</h2>
       <p>
         Share research that can move sustainable materials from evidence into
@@ -728,13 +734,13 @@ function About() {
     <>
       <PageHero
         eyebrow="ABOUT GCGC 2027"
-        title="An event designed to move research into practice"
-        copy="A focused international forum for green construction materials, sustainable production and low-carbon building practice"
+        title="A sustainable construction symposium for research and practice"
+        copy="GCGC 2027 Pakistan is a focused international forum for green construction materials, sustainable infrastructure research and low-carbon building practice in Karachi."
       />
       <section className="about-reference section">
         <Reveal>
           <span className="eyebrow dark">OUR PURPOSE</span>
-          <h2>Connecting materials research with climate action</h2>
+          <h2>Low-carbon cement and concrete research for climate action</h2>
         </Reveal>
         <Reveal className="about-copy">
           <h3>One platform for shared action</h3>
@@ -901,8 +907,8 @@ function CallForPapers() {
     <>
       <PageHero
         eyebrow="CALL FOR PAPERS"
-        title="Research with real-world consequence"
-        copy="We invite original research advancing low-carbon construction materials, sustainable construction and applied practice"
+        title="Call for papers in green construction materials"
+        copy="Submit original research through the GCGC 2027 EasyChair process for sustainable construction, waste-derived materials and applied low-carbon practice."
       />
       <section className="paper-intro section">
         <Reveal className="paper-statement">
@@ -1300,7 +1306,7 @@ function Archive() {
   return (
     <>
       <PageHero
-        eyebrow="MEDIA + CONFERENCE IN MOTION"
+        eyebrow="GCGC CONFERENCE ARCHIVE"
         title="Ideas carried forward"
         copy="Explore the people, dialogue and applied work that shaped the 2025 conference"
       />
@@ -1321,7 +1327,7 @@ function Archive() {
           <div className="edition-layout">
             <Reveal className="edition-story">
               <span className="eyebrow dark">GCGC 2025 · KARACHI</span>
-              <h2>Conference in motion</h2>
+              <h2>GCGC 2025 highlights</h2>
               <p>
                 Held on 5–6 February 2025, the Global Conference on Green
                 Construction Materials and Practices brought academia together
@@ -1429,6 +1435,72 @@ function Archive() {
     </>
   );
 }
+
+function Accommodation() {
+  const details = [
+    {
+      Icon: Hotel,
+      title: "Conference accommodation",
+      copy: "Accommodation support is planned for registered GCGC 2027 participants in Karachi.",
+    },
+    {
+      Icon: MapPin,
+      title: "Convenient location",
+      copy: "The selected options will be coordinated with the conference venue and official programme.",
+    },
+    {
+      Icon: CalendarCheck,
+      title: "Official arrangements",
+      copy: "Eligibility, stay dates, room categories and allocation procedures will be communicated through official conference channels.",
+    },
+  ];
+  return (
+    <>
+      <PageHero
+        eyebrow="PLAN YOUR STAY"
+        title="Accommodation for GCGC 2027 delegates"
+        copy="Practical stay information for conference participants travelling to Karachi for 10–11 April 2027."
+      />
+      <section className="accommodation section">
+        <Reveal className="accommodation-intro">
+          <span className="eyebrow dark">DELEGATE INFORMATION</span>
+          <h2>A comfortable stay, coordinated with the conference</h2>
+          <p>
+            The conference team intends to provide accommodation support for
+            eligible participants. Confirmed hotel information, inclusions and
+            the reservation process will be issued with the registration
+            guidance.
+          </p>
+        </Reveal>
+        <div className="accommodation-grid">
+          {details.map(({ Icon, title, copy }) => (
+            <Reveal className="accommodation-card" key={title}>
+              <Icon aria-hidden="true" />
+              <h3>{title}</h3>
+              <p>{copy}</p>
+            </Reveal>
+          ))}
+        </div>
+        <aside className="accommodation-note">
+          <ShieldCheck aria-hidden="true" />
+          <div>
+            <small>OFFICIAL BOOKING INFORMATION</small>
+            <h3>Please use only arrangements shared by GCGC 2027</h3>
+            <p>
+              Participants should wait for the official accommodation notice
+              before making conference-linked reservations. For travel-related
+              questions, contact the organizing team.
+            </p>
+          </div>
+          <Button to="/contact" ghost>
+            Contact the team
+          </Button>
+        </aside>
+      </section>
+    </>
+  );
+}
+
 function Contact() {
   return (
     <>
@@ -1453,14 +1525,14 @@ function Contact() {
             <CalendarDays />
             <div>
               <small>CONFERENCE DATES</small>
-              <b>27–28 April 2027</b>
+              <b>10–11 April 2027</b>
             </div>
           </div>
           <div className="contact-fact">
             <MapPin />
             <div>
-              <small>EXPECTED VENUE</small>
-              <b>UET Lahore</b>
+              <small>CONFERENCE CITY</small>
+              <b>Karachi, Pakistan</b>
               <span>Complete address to be confirmed</span>
             </div>
           </div>
@@ -1549,6 +1621,7 @@ function App() {
           <Route path="/call-for-papers" element={<CallForPapers />} />
           <Route path="/programme" element={<Programme />} />
           <Route path="/registration" element={<Registration />} />
+          <Route path="/accommodation" element={<Accommodation />} />
           <Route path="/committees" element={<Committees />} />
           <Route path="/partners" element={<Partners />} />
           <Route path="/archive" element={<Archive />} />

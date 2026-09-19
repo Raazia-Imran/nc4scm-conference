@@ -24,7 +24,7 @@ export const dates=[
   ['Final acceptance notification','15 February 2027'],
   ['Camera-ready paper submission','25 February 2027'],
   ['Author registration deadline','1 March 2027'],
-  ['GCGC 2027 conference','27–28 April 2027']
+  ['GCGC 2027 conference','10–11 April 2027']
 ] as const;
 export const people=['Patron-in-Chief','Conference Chair','Conference Co-Chair','Technical Program Chair','Conference Secretary','Publication Chair','Finance Chair','Local Arrangements Chair'];
-export const nav=[['Home','/'],['About','/about'],['Call for Papers','/call-for-papers'],['Programme','/programme'],['Speakers','/speakers'],['Registration','/registration'],['Committees','/committees'],['Partners','/partners'],['Archive','/archive'],['Contact','/contact']];
+export const nav=[['Home','/'],['About','/about'],['Call for Papers','/call-for-papers'],['Programme','/programme'],['Speakers','/speakers'],['Registration','/registration'],['Accommodation','/accommodation'],['Committees','/committees'],['Partners','/partners'],['Archive','/archive'],['Contact','/contact']];
