@@ -1532,6 +1532,10 @@ function Contact() {
   );
 }
 
+// function App(){const loc=useLocation();useEffect(()=>{window.scrollTo(0,0)},[loc.pathname]);return <><Header/><main><Routes><Route path="/" element={<Home/>}/><Route path="/about" element={<About/>}/><Route path="/speakers" element={<Speakers/>}/><Route path="/call-for-papers" element={<CallForPapers/>}/><Route path="/programme" element={<Programme/>}/><Route path="/registration" element={<Registration/>}/><Route path="/committees" element={<Committees/>}/><Route path="/partners" element={<Partners/>}/><Route path="/archive" element={<Archive/>}/><Route path="/contact" element={<Contact/>}/><Route path="*" element={<Home/>}/></Routes></main><Footer/><SpeedInsights /></>}
+
+// export default App;
+
 function App() {
   const loc = useLocation();
   useEffect(() => {
@@ -1556,8 +1560,9 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <SpeedInsights />
     </>
   );
 }
-<SpeedInsights />;
+
 export default App;
