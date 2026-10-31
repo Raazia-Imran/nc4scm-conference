@@ -1,0 +1,26 @@
+
+      {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Global Conference on Green Construction Materials and Practices (GCGC 2027)",
+        "description": "A green construction materials conference bringing together research, industry and policy for sustainable construction in Pakistan.",
+        "startDate": "2027-04-10",
+        "endDate": "2027-04-11",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "url": "https://gcgc.nc4scm.com/",
+        "location": {
+          "@type": "Place",
+          "name": "Karachi, Pakistan",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Karachi",
+            "addressCountry": "PK"
+          }
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "National Center for Sustainable Construction Materials (NC4SCM), NED University",
+          "url": "https://nc4scm.com"
+        }
+      }

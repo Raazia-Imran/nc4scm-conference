@@ -1,4 +1,7 @@
-import { SpeedInsights } from "@vercel/speed-insights/react";
+import PrivacyControls, { openPrivacySettings } from "./PrivacyControls";
+import PageMetadata from "./PageMetadata";
+import { LegalPage, NotFound } from "./LegalPages";
+import type { FormEvent } from "react";
 import { useEffect, useState } from "react";
 import { Link, Route, Routes, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -131,6 +134,10 @@ function Footer() {
           Proceedings guidelines
         </a>
         <Link to="/archive">2025 archive</Link>
+        <Link to="/privacy">Privacy notice</Link>
+        <Link to="/cookies">Cookies and storage</Link>
+        <Link to="/terms">Website terms</Link>
+        <button className="footer-privacy" onClick={openPrivacySettings}>Privacy settings</button>
       </div>
       <div>
         <h4>Contact</h4>
@@ -1501,6 +1508,19 @@ function Accommodation() {
 }
 
 function Contact() {
+  const [formError, setFormError] = useState("");
+  function validateEnquiry(event: FormEvent<HTMLFormElement>) {
+    setFormError("");
+    const form = event.currentTarget;
+    for (const name of ["name", "message"]) {
+      const field = form.elements.namedItem(name) as HTMLInputElement | HTMLTextAreaElement;
+      if (!field.value.trim()) {
+        event.preventDefault();
+        setFormError("Please enter your name and message using more than spaces.");
+        field.focus(); return;
+      }
+    }
+  }
   return (
     <>
       <PageHero
@@ -1546,6 +1566,8 @@ function Contact() {
         <form
           action="https://formsubmit.co/nc4scm@cloud.neduet.edu.pk"
           method="POST"
+          onSubmit={validateEnquiry}
+          aria-describedby="enquiry-provider"
         >
           <span className="form-label">SEND AN ENQUIRY</span>
           <h3>How can we help?</h3>
@@ -1555,23 +1577,25 @@ function Contact() {
             value="New GCGC 2027 website enquiry"
           />
           <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_captcha" value="false" />
           <input
             className="form-honeypot"
             type="text"
             name="_honey"
             tabIndex={-1}
             autoComplete="off"
+            aria-hidden="true"
           />
           <label>
-            Name
-            <input name="name" placeholder="Your full name" required />
+            Name{" "}
+            <input name="name" placeholder="Your full name" autoComplete="name" maxLength={120} required />
           </label>
           <label>
             Email
             <input
               name="email"
               type="email"
+              autoComplete="email"
+              maxLength={254}
               placeholder="you@example.com"
               required
             />
@@ -1589,11 +1613,14 @@ function Contact() {
             Message
             <textarea
               name="message"
+              maxLength={5000}
               rows={5}
               placeholder="Write your message"
               required
             />
           </label>
+          <p id="enquiry-provider" className="form-notice">Submitting sends your details to FormSubmit and opens its spam check and result page. Please read our <Link to="/privacy">privacy notice</Link>. If you see an error or no confirmation, email <a href="mailto:nc4scm@cloud.neduet.edu.pk">nc4scm@cloud.neduet.edu.pk</a> instead. Do not include sensitive information.</p>
+          {formError && <p className="form-notice" role="alert">{formError}</p>}
           <button className="button" type="submit">
             <Send size={17} /> Send enquiry
           </button>
@@ -1611,6 +1638,7 @@ function App() {
 
   return (
     <>
+      <PageMetadata />
       <Header />
       <main>
         <Routes>
@@ -1625,11 +1653,14 @@ function App() {
           <Route path="/partners" element={<Partners />} />
           <Route path="/archive" element={<Archive />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Home />} />
+          <Route path="/privacy" element={<LegalPage kind="privacy" />} />
+          <Route path="/cookies" element={<LegalPage kind="cookies" />} />
+          <Route path="/terms" element={<LegalPage kind="terms" />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />
-      <SpeedInsights />
+      <PrivacyControls />
     </>
   );
 }

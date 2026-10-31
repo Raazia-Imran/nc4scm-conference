@@ -1,0 +1,337 @@
+{
+  "checked_at_utc": "2026-10-31T18:34:01.387868+00:00",
+  "method": "Read-only GET, redirects not followed; network may proxy HTTPS. No form submissions.",
+  "responses": [
+    {
+      "url": "http://gcgc.nc4scm.com/",
+      "status": 308,
+      "headers": {
+        "content-type": "text/plain",
+        "location": "https://gcgc.nc4scm.com/",
+        "refresh": "0;url=https://gcgc.nc4scm.com/",
+        "server": "envoy",
+        "x-envoy-upstream-service-time": "304",
+        "date": "Sat, 31 Oct 2026 18:34:04 GMT",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "body_sample": "Redirecting..."
+    },
+    {
+      "url": "https://gcgc.nc4scm.com/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "1351",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-disposition": "inline",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sat, 31 Oct 2026 18:34:09 GMT",
+        "etag": "\"74c4681dc36541cc8a76fbfc921cfad9\"",
+        "last-modified": "Sat, 31 Oct 2026 18:11:38 GMT",
+        "server": "envoy",
+        "strict-transport-security": "max-age=63072000",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "cle1::tl78r-1793471649312-803051ef1f31",
+        "content-length": "3463",
+        "x-envoy-upstream-service-time": "361",
+        "connection": "close"
+      },
+      "body_sample": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <meta name=\"theme-color\" content=\"#071c20\" />\n\n    <!-- PRIMARY SEO META TAGS -->\n    <title>GCGC 2027 | Green Construction Materials Conference</title>\n    <meta\n      name=\"description\"\n      content=\"Join GCGC 2027 in Karachi, Pakistan, on 10\u201311 April for green construction materials and sustainable concrete research.\"\n    />\n    <meta\n      n"
+    },
+    {
+      "url": "https://www.gcgc.nc4scm.com/",
+      "status": 503,
+      "headers": {
+        "content-length": "98",
+        "content-type": "text/plain",
+        "date": "Sat, 31 Oct 2026 18:34:05 GMT",
+        "server": "envoy",
+        "connection": "close"
+      },
+      "body_sample": "upstream connect error or disconnect/reset before headers. reset reason: remote connection failure"
+    },
+    {
+      "url": "https://gcgc.nc4scm.com/about",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "1310",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-disposition": "inline; filename=\"index.html\"",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sat, 31 Oct 2026 18:34:09 GMT",
+        "etag": "\"74c4681dc36541cc8a76fbfc921cfad9\"",
+        "last-modified": "Sat, 31 Oct 2026 18:12:19 GMT",
+        "server": "envoy",
+        "strict-transport-security": "max-age=63072000",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "cle1::wbg29-1793471649312-2590fcba5226",
+        "content-length": "3463",
+        "x-envoy-upstream-service-time": "334",
+        "connection": "close"
+      },
+      "body_sample": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <meta name=\"theme-color\" content=\"#071c20\" />\n\n    <!-- PRIMARY SEO META TAGS -->\n    <title>GCGC 2027 | Green Construction Materials Conference</title>\n    <meta\n      name=\"description\"\n      content=\"Join GCGC 2027 in Karachi, Pakistan, on 10\u201311 April for green construction materials and sustainable concrete research.\"\n    />\n    <meta\n      n"
+    },
+    {
+      "url": "https://gcgc.nc4scm.com/contact",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "1310",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-disposition": "inline; filename=\"index.html\"",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sat, 31 Oct 2026 18:34:09 GMT",
+        "etag": "\"74c4681dc36541cc8a76fbfc921cfad9\"",
+        "last-modified": "Sat, 31 Oct 2026 18:12:19 GMT",
+        "server": "envoy",
+        "strict-transport-security": "max-age=63072000",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "cle1::dlgll-1793471649339-efce5b79f727",
+        "content-length": "3463",
+        "x-envoy-upstream-service-time": "361",
+        "connection": "close"
+      },
+      "body_sample": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <meta name=\"theme-color\" content=\"#071c20\" />\n\n    <!-- PRIMARY SEO META TAGS -->\n    <title>GCGC 2027 | Green Construction Materials Conference</title>\n    <meta\n      name=\"description\"\n      content=\"Join GCGC 2027 in Karachi, Pakistan, on 10\u201311 April for green construction materials and sustainable concrete research.\"\n    />\n    <meta\n      n"
+    },
+    {
+      "url": "https://gcgc.nc4scm.com/audit-missing-20261031",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "1310",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-disposition": "inline; filename=\"index.html\"",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sat, 31 Oct 2026 18:34:09 GMT",
+        "etag": "\"74c4681dc36541cc8a76fbfc921cfad9\"",
+        "last-modified": "Sat, 31 Oct 2026 18:12:19 GMT",
+        "server": "envoy",
+        "strict-transport-security": "max-age=63072000",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "cle1::m55ph-1793471649339-94f253c206ef",
+        "content-length": "3463",
+        "x-envoy-upstream-service-time": "360",
+        "connection": "close"
+      },
+      "body_sample": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <meta name=\"theme-color\" content=\"#071c20\" />\n\n    <!-- PRIMARY SEO META TAGS -->\n    <title>GCGC 2027 | Green Construction Materials Conference</title>\n    <meta\n      name=\"description\"\n      content=\"Join GCGC 2027 in Karachi, Pakistan, on 10\u201311 April for green construction materials and sustainable concrete research.\"\n    />\n    <meta\n      n"
+    },
+    {
+      "url": "https://gcgc.nc4scm.com/robots.txt",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "161224",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-disposition": "inline; filename=\"robots.txt\"",
+        "content-type": "text/plain; charset=utf-8",
+        "date": "Sat, 31 Oct 2026 18:34:09 GMT",
+        "etag": "\"d6acce9ab148abb234815043a86e2170\"",
+        "last-modified": "Thu, 29 Oct 2026 21:47:04 GMT",
+        "server": "envoy",
+        "strict-transport-security": "max-age=63072000",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "cle1::9lzpg-1793471649339-6febdaee79c8",
+        "content-length": "69",
+        "x-envoy-upstream-service-time": "317",
+        "connection": "close"
+      },
+      "body_sample": "User-agent: *\nAllow: /\n\nSitemap: https://gcgc.nc4scm.com/sitemap.xml\n"
+    },
+    {
+      "url": "https://gcgc.nc4scm.com/sitemap.xml",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "161224",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-disposition": "inline; filename=\"sitemap.xml\"",
+        "content-type": "application/xml",
+        "date": "Sat, 31 Oct 2026 18:34:09 GMT",
+        "etag": "\"069249e527ce70d735b5a35e1ff53dd7\"",
+        "last-modified": "Thu, 29 Oct 2026 21:47:05 GMT",
+        "server": "envoy",
+        "strict-transport-security": "max-age=63072000",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "cle1::n2fhg-1793471649312-6455c9cc10ce",
+        "content-length": "743",
+        "x-envoy-upstream-service-time": "361",
+        "connection": "close"
+      },
+      "body_sample": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url><loc>https://gcgc.nc4scm.com/</loc></url>\n  <url><loc>https://gcgc.nc4scm.com/about</loc></url>\n  <url><loc>https://gcgc.nc4scm.com/speakers</loc></url>\n  <url><loc>https://gcgc.nc4scm.com/call-for-papers</loc></url>\n  <url><loc>https://gcgc.nc4scm.com/programme</loc></url>\n  <url><loc>https://gcgc.nc4scm.com/registration</loc></url>\n  <url><loc>https://gcgc.nc4scm.com/accommodation</loc></url>\n  <url><loc>https://gcgc.nc4scm.com/committees</loc></url>\n  <url><loc>https://gcgc.nc4scm.com/partners</loc></url>\n  <url><loc>https://gcgc.nc4scm.com/archive</loc></url>\n  <url><loc>https://gcgc.nc4scm.com/contact</loc></url>\n</urlset>\n"
+    },
+    {
+      "url": "https://gcgc.nc4scm.com/og-banner.png",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "0",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-disposition": "inline; filename=\"og-banner.png\"",
+        "content-type": "image/png",
+        "date": "Sat, 31 Oct 2026 18:34:09 GMT",
+        "etag": "\"931df714fd5058a41508bc37456a6c8d\"",
+        "last-modified": "Sat, 31 Oct 2026 18:34:09 GMT",
+        "server": "envoy",
+        "strict-transport-security": "max-age=63072000",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "cle1::b5xxd-1793471649339-f736a5fce0ab",
+        "content-length": "245521",
+        "x-envoy-upstream-service-time": "404",
+        "connection": "close"
+      },
+      "tls_peer_certificate": {
+        "subject": [
+          [
+            [
+              "commonName",
+              "gcgc.nc4scm.com"
+            ]
+          ]
+        ],
+        "issuer": [
+          [
+            [
+              "countryName",
+              "US"
+            ]
+          ],
+          [
+            [
+              "stateOrProvinceName",
+              "California"
+            ]
+          ],
+          [
+            [
+              "localityName",
+              "San Francisco"
+            ]
+          ],
+          [
+            [
+              "organizationName",
+              "OpenAI, LLC"
+            ]
+          ],
+          [
+            [
+              "commonName",
+              "openai.com"
+            ]
+          ]
+        ],
+        "version": 3,
+        "serialNumber": "D7A6F13A93636465BC30FC11548D3251",
+        "notBefore": "Oct 31 18:06:37 2026 GMT",
+        "notAfter": "Nov  1 18:11:37 2026 GMT",
+        "subjectAltName": [
+          [
+            "DNS",
+            "gcgc.nc4scm.com"
+          ]
+        ]
+      }
+    },
+    {
+      "url": "https://gcgc.nc4scm.com/google6cebf148146998e0.html",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "0",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-disposition": "inline; filename=\"google6cebf148146998e0.html\"",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sat, 31 Oct 2026 18:34:09 GMT",
+        "etag": "\"f1b4de8d3a41905202424c9845390b39\"",
+        "last-modified": "Sat, 31 Oct 2026 18:34:09 GMT",
+        "server": "envoy",
+        "strict-transport-security": "max-age=63072000",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "cle1::h842l-1793471649313-97e2ef0e60e1",
+        "content-length": "53",
+        "x-envoy-upstream-service-time": "353",
+        "connection": "close"
+      },
+      "body_sample": "google-site-verification: google6cebf148146998e0.html"
+    },
+    {
+      "url": "https://nc4scm-conference.vercel.app/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "0",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-disposition": "inline",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sat, 31 Oct 2026 18:34:17 GMT",
+        "etag": "\"74c4681dc36541cc8a76fbfc921cfad9\"",
+        "last-modified": "Sat, 31 Oct 2026 18:34:17 GMT",
+        "server": "envoy",
+        "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "cle1::g7b66-1793471657346-64db7b2380aa",
+        "content-length": "3463",
+        "x-envoy-upstream-service-time": "378",
+        "connection": "close"
+      },
+      "body_sample": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <meta name=\"theme-color\" content=\"#071c20\" />\n\n    <!-- PRIMARY SEO META TAGS -->\n    <title>GCGC 2027 | Green Construction Materials Conference</title>\n    <meta\n      name=\"description\"\n      content=\"Join GCGC 2027 in Karachi, Pakistan, on 10\u201311 April for green construction materials and sustainable concrete research.\"\n    />\n    <meta\n      n"
+    },
+    {
+      "url": "https://hoshintegrity.com/",
+      "status": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-store",
+        "content-security-policy": "default-src 'self'; script-src 'nonce-4be3b502b9a04f02b853018dd5cbf710' 'strict-dynamic'; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://api.web3forms.com; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com; upgrade-insecure-requests",
+        "content-type": "text/html; charset=utf-8",
+        "cross-origin-opener-policy": "same-origin",
+        "date": "Sat, 31 Oct 2026 18:34:14 GMT",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "server": "envoy",
+        "strict-transport-security": "max-age=63072000",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-permitted-cross-domain-policies": "none",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "cle1::iad1::8prhl-1793471653294-e794026d1379",
+        "x-envoy-upstream-service-time": "982",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "body_sample": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\" nonce=\"4be3b502b9a04f02b853018dd5cbf710\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" nonce=\"4be3b502b9a04f02b853018dd5cbf710\"/><link rel=\"preload\" as=\"image\" href=\"/hosh-logo.png\"/><link rel=\"preload\" as=\"image\" href=\"/assets/hosh-industrial-island-CzMfd96k.jpg\"/><link rel=\"stylesheet\" href=\"/assets/styles-BHVc3-9M.css\" nonce=\"4be3b502b9a04f02b853018dd5cbf710\" data-precedence=\"default\"/><meta property=\"csp-nonce\""
+    },
+    {
+      "url": "https://formsubmit.co/",
+      "status": 403,
+      "headers": {
+        "date": "Sat, 31 Oct 2026 18:34:12 GMT",
+        "content-type": "text/plain; charset=UTF-8",
+        "content-length": "17",
+        "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+        "expires": "Thu, 01 Jan 1970 00:00:01 GMT",
+        "referrer-policy": "same-origin",
+        "x-frame-options": "SAMEORIGIN",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=%2F%2BUk1rquD4L0%2FtOtRtXEcYogqQPa%2B%2BjARGEk%2FK8yu6iqJ9VSHiugbaGo3r1kkTVkLOKDDQPyIAP4YA5E0gm46rvoCkduDKXStaHOMb5Dz2PSqWeq%2FrHuGXR3KzsAQTs7rr%2FdFY29BJ7ztl%2FF\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a534c0a65dc303ee-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "87",
+        "connection": "close"
+      },
+      "body_sample": "error code: 1010\n"
+    }
+  ]
+}
