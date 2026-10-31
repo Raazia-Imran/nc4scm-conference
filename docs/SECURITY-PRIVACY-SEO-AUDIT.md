@@ -119,7 +119,8 @@ If a reviewed release causes an issue, revert the merge through a new GitHub rev
 - [x] Google verification file preserved byte-for-byte.
 - [x] Local build, type, lint, unit/security and browser checks passed.
 - [x] Local dependency audit reports zero known vulnerabilities.
-- [ ] Exact pushed commit CI and Vercel preview results recorded below.
+- [x] Exact implementation commit CI and Vercel build results recorded below.
+- [ ] Protected preview application responses checked with authorized access.
 - [ ] Actual custom-domain hosting project confirmed.
 - [ ] Reviewed changes merged and production deployment verified.
 - [ ] Origin certificate expiry/SAN and intended alternate hostname verified.
@@ -142,4 +143,12 @@ HosH reference: its `src/lib/security-policy.ts`, `src/lib/privacy-preferences.t
 
 ## Release status
 
-Pending push and exact-commit check inspection. No production release is claimed by this report.
+Implementation pushed in [PR #27](https://github.com/Raazia-Imran/nc4scm-conference/pull/27), commit `c338b86e4a8c727ffed67823e03700734e0a3e05`.
+
+- [GitHub Actions run 41230733783](https://github.com/Raazia-Imran/nc4scm-conference/actions/runs/41230733783) completed successfully for that exact commit. Install, typecheck, lint, production build, generated-file consistency, all security checks, vulnerability audit, browser installation and browser tests passed on the hosted runner.
+- Vercel reports a successful deployment status. The accessible preview deployment `dpl_Gg65pa1EHZvp6NKfxWyTwirdrtxw` is READY and its Git metadata matches `c338b86e4a8c727ffed67823e03700734e0a3e05` on this branch.
+- Preview: https://nc4scm-conference-git-fix-conf-0d9ef9-raazias-projects-142c0b42.vercel.app . An unauthenticated request reaches Vercel's SSO login. This confirms the tested preview is protected, not that application headers or page behavior were checked on that host. Authorized preview-fetch/share tools reported unavailable access; protection was not disabled. Preview application smoke tests remain pending.
+- GitHub also reports a successful Vercel context with a dashboard URL under the `nc-4-scm` scope; that scope's production domain mapping has not been independently verified through available account access.
+- Production `main` remains unchanged. No merge, DNS edit, live domain move or production deployment was performed. The documentation-only follow-up records these results; check its exact head before merging.
+
+Remaining release gates: confirm the actual custom-domain project, inspect the protected preview, organizer notice/provider review, then merge through the existing process and verify the custom domain. Search Console and origin TLS inventory still require their respective account/normal-network checks.
