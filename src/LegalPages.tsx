@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { openPrivacySettings } from './PrivacyControls';
 const email = <a href="mailto:nc4scm@cloud.neduet.edu.pk">nc4scm@cloud.neduet.edu.pk</a>;
-export function LegalPage({ kind }: { kind: 'privacy' | 'cookies' | 'terms' }) {
+export function LegalPage({ kind }: Readonly<{ kind: 'privacy' | 'cookies' | 'terms' }>) {
   const title = { privacy: 'Privacy notice', cookies: 'Cookies and privacy choices', terms: 'Website terms' }[kind];
   return <section className="section legal-page"><span className="eyebrow dark">GCGC 2027 · WEBSITE INFORMATION</span><h1>{title}</h1><p className="legal-updated">Updated 31 October 2026</p>
     {kind === 'privacy' && <>

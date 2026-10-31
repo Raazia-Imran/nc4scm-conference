@@ -17,12 +17,12 @@ jobs:
         with:
           node-version: '24'
           cache: npm
-      - run: npm ci
+      - run: npm ci --ignore-scripts
       - run: npm run typecheck
       - run: npm run lint
       - run: npm run build
       - run: git diff --exit-code -- vercel.json public/sitemap.xml
       - run: npm run check
       - run: npm audit --audit-level=moderate
-      - run: npx playwright install --with-deps chromium
+      - run: ./node_modules/.bin/playwright install --with-deps chromium
       - run: npm run test:browser

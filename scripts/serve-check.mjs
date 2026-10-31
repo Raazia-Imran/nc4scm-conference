@@ -13,7 +13,7 @@ createServer(async (req, res) => {
     for (const { key, value } of rule.headers) res.setHeader(key, value);
   }
   const redirect = config.redirects.find(rule => rule.source === url.pathname);
-  if (redirect) { res.writeHead(308, { Location: redirect.destination + url.search }); res.end(); return; }
+  if (redirect) { res.writeHead(308, { Location: redirect.destination }); res.end(); return; }
   const rewrite = config.rewrites.find(rule => rule.source === url.pathname);
   const path = resolve(root, '.' + (rewrite?.destination || (url.pathname === '/' ? '/index.html' : url.pathname)));
   if (!path.startsWith(root + sep)) { res.writeHead(400); res.end(); return; }

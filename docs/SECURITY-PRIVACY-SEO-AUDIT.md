@@ -152,3 +152,8 @@ Implementation pushed in [PR #27](https://github.com/Raazia-Imran/nc4scm-confere
 - Production `main` remains unchanged. No merge, DNS edit, live domain move or production deployment was performed. The documentation-only follow-up records these results; check its exact head before merging.
 
 Remaining release gates: confirm the actual custom-domain project, inspect the protected preview, organizer notice/provider review, then merge through the existing process and verify the custom domain. Search Console and origin TLS inventory still require their respective account/normal-network checks.
+
+
+### Pre-merge security follow-up
+
+The subsequent full check-run review found SonarCloud's Security Rating E on commit d8bf022. The blocking annotation concerned forwarding a raw request query into a Location header in the **local verification harness**, not the deployed application. The harness now uses only the configured static redirect destination. Related quality findings were addressed: linear template matching, parallel independent page writes, readonly props, focus-control indexing and dedicated browser assertions. CI installation disables lifecycle scripts and invokes its lockfile-pinned local Playwright binary directly. The prior statement that GitHub Actions passed remains accurate, but did not establish a passing SonarCloud quality gate. Merge requires fresh full check-run verification.

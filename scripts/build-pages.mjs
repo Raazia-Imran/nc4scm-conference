@@ -12,15 +12,16 @@ function render(path, title, description, missing = false) {
     .replace(/(<meta\s+property="og:title"\s+content=")[^"]*("\s*\/?>)/, `$1${escape(title)}$2`)
     .replace(/(<meta\s+property="og:description"\s+content=")[^"]*("\s*\/?>)/, `$1${escape(description)}$2`)
     .replace(/(<meta property="og:url" content=")[^"]*("\s*\/?>)/, `$1${url}$2`);
-  if (path !== '/') html = html.replace(/\s*<script type="application\/ld\+json">[\s\S]*?<\/script>/, '');
-  if (missing) html = html.replace(/\s*<link rel="canonical"[^>]*>/, '');
+  if (path !== '/') html = html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, '');
+  if (missing) html = html.replace(/<link rel="canonical"[^>]*>/, '');
   return html.replace('</head>', `<meta name="robots" content="${preview || missing ? 'noindex, follow' : 'index, follow'}" />\n</head>`);
 }
-for (const [path, [title, description]] of Object.entries(pages)) {
-  await writeFile(`dist/${path === '/' ? 'index' : path.slice(1)}.html`, render(path, title, description));
-}
+await Promise.all(Object.entries(pages).map(([path, [title, description]]) =>
+  writeFile(`dist/${path === '/' ? 'index' : path.slice(1)}.html`, render(path, title, description))
+));
 await writeFile('dist/404.html', render('/404', 'Page not found | GCGC 2027', 'The requested conference page could not be found.', true));
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${Object.keys(pages).map(path => `  <url><loc>https://gcgc.nc4scm.com${path === '/' ? '/' : path}</loc></url>`).join('\n')}\n</urlset>\n`;
+const sitemapRows = Object.keys(pages).map(path => `  <url><loc>https://gcgc.nc4scm.com${path === '/' ? '/' : path}</loc></url>`).join('\n');
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapRows}\n</urlset>\n`;
 await writeFile('dist/sitemap.xml', sitemap);
 await writeFile('public/sitemap.xml', sitemap);
 const jsonld = template.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)?.[1];

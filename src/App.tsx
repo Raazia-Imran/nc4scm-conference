@@ -1586,7 +1586,7 @@ function Contact() {
             aria-hidden="true"
           />
           <label>
-            Name
+            Name{" "}
             <input name="name" placeholder="Your full name" autoComplete="name" maxLength={120} required />
           </label>
           <label>

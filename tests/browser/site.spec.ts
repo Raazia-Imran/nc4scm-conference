@@ -8,6 +8,8 @@ test('all public routes load, contain distinct metadata, and unknown paths retur
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://gcgc.nc4scm.com${path}`);
   }
   expect(errors).toEqual([]);
+  const redirect = await request.get('/about.html?next=https://example.invalid', { maxRedirects: 0 });
+  expect(redirect.status()).toBe(308); expect(redirect.headers().location).toBe('/about');
   const missing = await request.get('/missing-audit-page'); expect(missing.status()).toBe(404);
   await page.goto('/missing-audit-page'); await expect(page.getByRole('heading', { name: 'We could not find that page' })).toBeVisible();
   expect((await request.get('/robots.txt')).status()).toBe(200);
@@ -43,13 +45,13 @@ test('monitoring stays off before choice; accept, withdraw, keyboard close and p
 });
 test('expired preferences keep monitoring off', async ({ page }) => {
   await page.addInitScript(({ key }) => localStorage.setItem(key, JSON.stringify({ version: 1, performance: true, savedAt: Date.now() - 181 * 86400000 })), { key });
-  await page.goto('/'); expect(await page.locator('script[src*="speed-insights"]').count()).toBe(0);
+  await page.goto('/'); await expect(page.locator('script[src*="speed-insights"]')).toHaveCount(0);
   expect(await page.evaluate(k => localStorage.getItem(k), key)).toBeNull();
 });
 test('form validates locally and sends only to the existing provider when explicitly submitted', async ({ page }) => {
   await page.goto('/contact');
   await page.getByRole('button', { name: 'Send enquiry' }).click();
-  expect(await page.locator('input[name="name"]:invalid').count()).toBe(1);
+  await expect(page.locator('input[name="name"]:invalid')).toHaveCount(1);
   await page.getByLabel('Name', { exact: true }).fill('   ');
   await page.getByLabel('Email', { exact: true }).fill('test@example.invalid');
   await page.getByLabel('Message', { exact: true }).fill('   ');
@@ -79,7 +81,7 @@ test('blocked storage reports the limitation and never loads monitoring', async 
   await page.locator('main').getByRole('button', { name: 'Privacy settings' }).click();
   await page.getByRole('button', { name: 'Allow performance monitoring', exact: true }).click();
   await expect(page.getByRole('alert')).toContainText('could not save');
-  expect(await page.locator('script[src*="speed-insights"]').count()).toBe(0);
+  await expect(page.locator('script[src*="speed-insights"]')).toHaveCount(0);
 });
 test('performance callback removes query and fragment and blocks events after expiry', async ({ page }) => {
   await page.route('**/_vercel/speed-insights/**', route => route.fulfill({ contentType: 'text/javascript', body: '' }));
