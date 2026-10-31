@@ -99,7 +99,7 @@ For images, provide the highest-quality original files and usage permission. Tra
 - Custom responsive CSS
 - Vercel deployment
 
-The project is a client-side React single-page application with multiple public routes. Vercel rewrites all routes to `index.html`, allowing direct visits and page reloads without 404 errors.
+The project is a client-side React single-page application with multiple public routes. The build generates one HTML entry document per approved route, with route-specific metadata. Vercel rewrites only those known routes to their documents. Unknown URLs receive a real 404 response and an accessible missing-page view. The React application and approved page content are retained.
 
 ### Project structure
 
@@ -126,7 +126,7 @@ The project is a client-side React single-page application with multiple public 
 Requirements: a current Node.js LTS release and npm.
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
@@ -144,14 +144,15 @@ npm run preview
 - Add images under `public/images/` and reference them as `/images/filename.ext`.
 - Add downloads under `public/downloads/` and reference them as `/downloads/filename.ext`.
 - Add new public routes to both the `nav` array and `<Routes>` configuration.
-- Add indexable routes to `public/sitemap.xml`.
+- Add route titles and descriptions to `src/page-meta.json`. Run the build and commit the generated `vercel.json` and `public/sitemap.xml` alongside route changes.
 - Test navigation, direct route loading and responsive layouts after every change.
 
 ### SEO and crawler configuration
 
 SEO infrastructure is intentionally separated from visible page design:
 
-- `index.html`: title, description, keywords, canonical URL, Open Graph tags and Event JSON-LD
+- `index.html`: homepage metadata and Event JSON-LD; `src/page-meta.json` supplies metadata for every public route
+- `scripts/build-pages.mjs`: route documents, matching sitemap, exact JSON-LD CSP hash and allowlisted rewrites
 - `public/robots.txt`: crawler access and sitemap location
 - `public/sitemap.xml`: canonical public routes
 - `public/google6cebf148146998e0.html`: Google Search Console ownership verification
@@ -161,12 +162,8 @@ Do not add large keyword blocks to the visible hero or alter approved interface 
 ### Critical safety rules
 
 1. **Never delete, rename, move or edit** `public/google6cebf148146998e0.html`.
-2. Preserve the catch-all React route in `src/App.tsx`.
-3. Preserve the SPA rewrite in `vercel.json`:
-
-   ```json
-   { "source": "/(.*)", "destination": "/index.html" }
-   ```
+2. Preserve the catch-all React route in `src/App.tsx` as the accessible `NotFound` view.
+3. Preserve route-specific rewrites and generated HTML entries. Do not restore a catch-all rewrite: it causes soft 404s and loses page-specific first-response metadata. This intentionally replaces the earlier homepage fallback to meet the security and indexing audit requirements.
 
 4. Preserve existing security headers when editing `vercel.json`.
 5. Do not publish unconfirmed names, fees, URLs, hotels or venue addresses.
@@ -176,7 +173,7 @@ Do not add large keyword blocks to the visible hero or alter approved interface 
 
 ### Forms and external services
 
-The contact form submits through FormSubmit to the official conference email. Test carefully when changing form fields or the recipient. The EasyChair portal remains a placeholder until the conference team supplies the official submission URL.
+The contact form submits through FormSubmit to the official conference email. Its default CAPTCHA is enabled and the honeypot is retained. Native validation, length limits and whitespace checks run locally; FormSubmit handles the external spam check and result page. Provider activation, server-side protections and real mailbox delivery require organizer verification. Do not send test mail without explicit authorization. The EasyChair portal remains a placeholder until the conference team supplies the official submission URL.
 
 No application database or custom backend is currently required. Add one only when a confirmed feature cannot be handled safely by the existing static architecture.
 
@@ -203,9 +200,29 @@ The production website is connected to the repository through Vercel.
 - [ ] Images include meaningful alternative text
 - [ ] No approved content was unintentionally removed
 - [ ] Google verification file is unchanged
-- [ ] Vercel rewrite and security headers are intact
+- [ ] Known routes load directly; missing URLs return HTTP 404; security headers are intact
 - [ ] Sitemap includes any new public route
 
 ### Current production status
 
 The website includes the approved Karachi dates, research tracks, author downloads, conference archive, institutional identities, enquiry form, technical SEO files, security headers and accommodation information structure. Placeholder areas should be updated progressively as the organizing team confirms final content.
+
+
+## Security, privacy and release verification
+
+Read [the audit and handover](docs/SECURITY-PRIVACY-SEO-AUDIT.md) before merging or publishing. It records evidence, remaining account checks, client decisions and rollback steps. The baseline live deployment is separate from the proposed branch; a passing local test is not a production verification.
+
+```bash
+npm ci
+npm run typecheck
+npm run lint
+npm run build
+npm run check
+npx playwright install chromium
+npm run test:browser
+npm audit --audit-level=moderate
+```
+
+The build updates `vercel.json` and `public/sitemap.xml` deterministically. Commit those generated changes before deployment. CI fails if they drift, because Vercel reads routing configuration before running the build. `npm run serve:check` serves built route files with the configured headers for local verification; it is a test harness and does not replace a Vercel preview check. `npm run preview` uses Vite's SPA fallback and cannot verify deployment 404 behavior.
+
+Privacy settings are in the footer and Cookies page. Performance monitoring is off by default and only activates after a saved permission; the site needs no intrusive banner. Withdrawal reloads the page to unload the optional script. Preferences expire after 180 days. Fonts are hosted locally with their licenses in `public/fonts/`. No registration, payment, account or CMS integration has been introduced.
