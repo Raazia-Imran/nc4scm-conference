@@ -37,8 +37,8 @@ test('conference poster uses a local repository asset and opens full-size in a n
   await expect(page.locator('.conference-poster-copy')).toHaveCount(0);
 
   await page.waitForFunction(() => {
-    const image = document.querySelector('.conference-poster-image img');
-    return Boolean(document.querySelector('.conference-poster-placeholder')) || Boolean(image && image.complete);
+    const image = document.querySelector<HTMLImageElement>('.conference-poster-image img');
+    return Boolean(document.querySelector('.conference-poster-placeholder')) || Boolean(image?.complete);
   });
 
   const image = page.locator('.conference-poster-image img');
@@ -46,7 +46,7 @@ test('conference poster uses a local repository asset and opens full-size in a n
   if (await image.count()) {
     await expect(image).toBeVisible();
     await expect(image).toHaveAttribute('src', '/images/gcgc-2027-poster.png');
-    expect(await image.evaluate(element => element.naturalWidth)).toBeGreaterThan(0);
+    expect(await image.evaluate((element: HTMLImageElement) => element.naturalWidth)).toBeGreaterThan(0);
     const link = page.locator('.conference-poster-image');
     await expect(link).toHaveAttribute('href', '/images/gcgc-2027-poster.png');
     await expect(link).toHaveAttribute('target', '_blank');
