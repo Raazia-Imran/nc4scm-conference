@@ -852,13 +852,7 @@ function Speakers() {
 }
 
 function CallForPapers() {
-  const poster = (conferenceContent as Omit<typeof conferenceContent, "posterImage"> & {
-    posterImage?: { url: string; alt: string; width?: number; height?: number } | null;
-  }).posterImage ?? null;
   const [posterFailed, setPosterFailed] = useState(false);
-  useEffect(() => {
-    setPosterFailed(false);
-  }, [poster?.url]);
 
   const steps = [
     [
@@ -919,19 +913,19 @@ function CallForPapers() {
         copy="Submit your research to GCGC 2027"
       />
       <section className="conference-poster section" aria-label="GCGC 2027 conference poster">
-        {poster?.url && !posterFailed ? (
+        {!posterFailed ? (
           <a
             className="conference-poster-image"
-            href={poster.url}
+            href="/images/gcgc-2027-poster.png"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Open full-size GCGC 2027 poster in a new tab"
           >
             <img
-              src={poster.url}
-              alt={poster.alt}
-              width={poster.width || 1152}
-              height={poster.height || 2048}
+              src="/images/gcgc-2027-poster.png"
+              alt="GCGC 2027 conference poster, 16–17 April 2027 in Karachi"
+              width="1152"
+              height="2048"
               loading="eager"
               decoding="async"
               onError={() => setPosterFailed(true)}
@@ -940,8 +934,8 @@ function CallForPapers() {
         ) : (
           <div className="conference-poster-placeholder" role="status">
             <span className="eyebrow dark">OFFICIAL GCGC 2027 POSTER</span>
-            <h2>Poster coming soon</h2>
-            <p>The official conference poster will appear here once it has been uploaded and published in the NC4SCM content studio.</p>
+            <h2>Poster image not uploaded yet</h2>
+            <p>The full approved poster will appear here once the image is added to the conference website repository.</p>
           </div>
         )}
       </section>
