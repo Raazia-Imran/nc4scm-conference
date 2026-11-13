@@ -29,20 +29,28 @@ test('internal navigation resets scroll so the fixed header does not cover the d
   expect(heading).not.toBeNull();
   expect(heading!.y).toBeGreaterThan(header!.y + header!.height);
 });
-test('conference poster is centered on white, displays the full image and opens full-size in a new tab', async ({ page }) => {
+test('conference poster uses the published Sanity asset or a clean placeholder, never a broken static path', async ({ page }) => {
   await page.goto('/call-for-papers');
   await expect(page.getByRole('heading', { name: 'Call for Papers', exact: true })).toBeVisible();
   const section = page.locator('.conference-poster');
   await expect(section).toHaveCSS('background-color', 'rgb(255, 255, 255)');
   await expect(page.locator('.conference-poster-copy')).toHaveCount(0);
-  const image = page.getByRole('img', { name: /GCGC 2027 conference poster, 16–17 April 2027/ });
-  await expect(image).toBeVisible();
-  await expect(image).toHaveAttribute('loading', 'eager');
-  const link = page.getByRole('link', { name: 'Open full-size GCGC 2027 poster in a new tab' });
-  await expect(link).toHaveAttribute('href', '/images/gcgc-2027-poster.avif');
-  await expect(link).toHaveAttribute('target', '_blank');
-  await expect(image).toHaveCSS('object-fit', 'contain');
-  await expect(page.getByRole('link', { name: /Open full-size poster/i })).toHaveCount(0);
+
+  const image = page.locator('.conference-poster-image img');
+  const placeholder = page.locator('.conference-poster-placeholder');
+  if (await image.count()) {
+    await expect(image).toBeVisible();
+    await expect(image).toHaveAttribute('loading', 'eager');
+    const source = await image.getAttribute('src');
+    expect(source).toMatch(/^https:\/\/cdn\.sanity\.io\/images\/dxinqb51\/production\//);
+    await expect(page.locator('.conference-poster-image')).toHaveAttribute('href', source!);
+    await expect(page.locator('.conference-poster-image')).toHaveAttribute('target', '_blank');
+    await expect(image).toHaveCSS('object-fit', 'contain');
+  } else {
+    await expect(placeholder).toBeVisible();
+    await expect(placeholder).toContainText('Poster coming soon');
+  }
+  await expect(page.locator('img[src="/images/gcgc-2027-poster.avif"]')).toHaveCount(0);
 });
 test('monitoring stays off before choice; accept, withdraw, keyboard close and persist work', async ({ page, context }) => {
   // Mock only the performance script, never send measurements or enquiries to a provider.

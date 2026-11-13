@@ -141,9 +141,10 @@ npm run preview
 
 - Update conference dates, navigation and research tracks in `src/data.ts` where applicable.
 - Page content and route components live in `src/App.tsx`.
-- Keynote profiles are edited in the NC4SCM Sanity Studio under Events → GCGC 2027 → Keynote speaker profiles. Publish changes, then rebuild/redeploy this conference project. `scripts/sync-keynotes.mjs` reads only published public profiles at build time; the reviewed `src/conference-content.json` snapshot keeps builds usable during CMS outages. No write credential is used by the conference frontend.
+- Keynote profiles and the official GCGC 2027 poster are managed in the NC4SCM Sanity Studio under Events → GCGC 2027. Edit the relevant field, publish it, then rebuild/redeploy this conference project. `scripts/sync-keynotes.mjs` reads only published public content at build time, including the poster's Sanity CDN asset URL; the reviewed `src/conference-content.json` snapshot keeps builds usable during CMS outages. No write credential is used by the conference frontend.
+- To replace the poster, open the GCGC 2027 event in Sanity Studio, upload the full approved artwork in **Official conference poster**, enter alternative text, and publish. Use the original PNG or JPG; do not upload a screenshot of the Studio or crop the artwork. The Call for Papers page keeps the poster's original aspect ratio and shows a clean placeholder if no valid published asset is available.
 - Conference dates remain release-controlled in the application, metadata and JSON-LD. Update all of them together, including the sharing banner and main NC4SCM event/announcement.
-- Add images under `public/images/` and reference them as `/images/filename.ext`.
+- Add other static site images under `public/images/` and reference them as `/images/filename.ext`.
 - Add downloads under `public/downloads/` and reference them as `/downloads/filename.ext`.
 - Add new public routes to both the `nav` array and `<Routes>` configuration.
 - Add route titles and descriptions to `src/page-meta.json`. Run the build and commit the generated `vercel.json` and `public/sitemap.xml` alongside route changes.
