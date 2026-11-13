@@ -29,28 +29,33 @@ test('internal navigation resets scroll so the fixed header does not cover the d
   expect(heading).not.toBeNull();
   expect(heading!.y).toBeGreaterThan(header!.y + header!.height);
 });
-test('conference poster uses the published Sanity asset or a clean placeholder, never a broken static path', async ({ page }) => {
+test('conference poster uses a local repository asset and opens full-size in a new tab', async ({ page }) => {
   await page.goto('/call-for-papers');
   await expect(page.getByRole('heading', { name: 'Call for Papers', exact: true })).toBeVisible();
   const section = page.locator('.conference-poster');
   await expect(section).toHaveCSS('background-color', 'rgb(255, 255, 255)');
   await expect(page.locator('.conference-poster-copy')).toHaveCount(0);
 
+  await page.waitForFunction(() => {
+    const image = document.querySelector<HTMLImageElement>('.conference-poster-image img');
+    return Boolean(document.querySelector('.conference-poster-placeholder')) || Boolean(image?.complete);
+  });
+
   const image = page.locator('.conference-poster-image img');
   const placeholder = page.locator('.conference-poster-placeholder');
   if (await image.count()) {
     await expect(image).toBeVisible();
-    await expect(image).toHaveAttribute('loading', 'eager');
-    const source = await image.getAttribute('src');
-    expect(source).toMatch(/^https:\/\/cdn\.sanity\.io\/images\/dxinqb51\/production\//);
-    await expect(page.locator('.conference-poster-image')).toHaveAttribute('href', source!);
-    await expect(page.locator('.conference-poster-image')).toHaveAttribute('target', '_blank');
+    await expect(image).toHaveAttribute('src', '/images/gcgc-2027-poster.png');
+    expect(await image.evaluate((element: HTMLImageElement) => element.naturalWidth)).toBeGreaterThan(0);
+    const link = page.locator('.conference-poster-image');
+    await expect(link).toHaveAttribute('href', '/images/gcgc-2027-poster.png');
+    await expect(link).toHaveAttribute('target', '_blank');
     await expect(image).toHaveCSS('object-fit', 'contain');
   } else {
     await expect(placeholder).toBeVisible();
-    await expect(placeholder).toContainText('Poster coming soon');
+    await expect(placeholder).toContainText('Poster image not uploaded yet');
   }
-  await expect(page.locator('img[src="/images/gcgc-2027-poster.avif"]')).toHaveCount(0);
+  await expect(page.locator('img[src*="cdn.sanity.io"]')).toHaveCount(0);
 });
 test('monitoring stays off before choice; accept, withdraw, keyboard close and persist work', async ({ page, context }) => {
   // Mock only the performance script, never send measurements or enquiries to a provider.
