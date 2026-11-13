@@ -913,13 +913,13 @@ function CallForPapers() {
       <section className="conference-poster section" aria-label="GCGC 2027 conference poster">
         <a
           className="conference-poster-image"
-          href="/images/gcgc-2027-poster.png"
+          href="/images/gcgc-2027-poster.avif"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Open full-size GCGC 2027 poster in a new tab"
         >
           <img
-            src="/images/gcgc-2027-poster.png"
+            src="/images/gcgc-2027-poster.avif"
             alt="GCGC 2027 conference poster, 16–17 April 2027 in Karachi"
             width="1152"
             height="2048"
