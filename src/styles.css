@@ -166,30 +166,39 @@ footer{font-size:14px}footer h4,.copyright{font-size:11px}
 @media(max-width:700px){.conference-poster{grid-template-columns:1fr;gap:32px;padding-top:72px;padding-bottom:72px}.conference-poster-image{width:min(100%,360px);justify-self:center}}
 
 
-/* Call for Papers: poster-first layout with a light, centered presentation. */
+/* Call for Papers: retain its centered poster-first layout while matching the site's deep-green page heroes. */
 .call-for-papers-hero {
   min-height: 0;
   padding: clamp(42px, 5vw, 66px) 24px 22px;
-  background: #fff;
-  color: var(--ink);
+  background: var(--deep);
+  color: #fff;
   text-align: center;
 }
 .call-for-papers-hero:after,
 .call-for-papers-hero .grain {
-  display: none;
+  display: block;
 }
-.call-for-papers-hero > div {
+.call-for-papers-hero:after {
+  pointer-events: none;
+}
+.call-for-papers-hero > .grain {
+  max-width: none;
+  margin: 0;
+}
+.call-for-papers-hero > div:not(.grain) {
+  position: relative;
+  z-index: 2;
   max-width: 900px;
   margin: 0 auto;
 }
 .call-for-papers-hero .eyebrow {
-  color: #527b68;
+  color: var(--lime);
   margin-bottom: 12px;
 }
 .call-for-papers-hero h1 {
   max-width: none;
   margin: 0 0 9px;
-  color: var(--ink);
+  color: #fff;
   font-size: clamp(32px, 4vw, 48px);
   line-height: 1.08;
   text-transform: none;
@@ -197,7 +206,7 @@ footer{font-size:14px}footer h4,.copyright{font-size:11px}
 .call-for-papers-hero p {
   max-width: 600px;
   margin: 0 auto;
-  color: #52645e;
+  color: #aabbb9;
   font-size: 15px;
 }
 .conference-poster {
