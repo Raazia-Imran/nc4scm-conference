@@ -21,7 +21,7 @@ test('internal navigation resets scroll so the fixed header does not cover the d
   await page.evaluate(() => window.scrollTo(0, 600));
   await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(0);
   await page.getByRole('link', { name: 'Papers', exact: true }).click();
-  await expect(page).toHaveURL(/\\/call-for-papers$/);
+  await expect(page).toHaveURL(/\/call-for-papers$/);
   await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0);
   const header = await page.locator('.navigation-shell header').boundingBox();
   const heading = await page.getByRole('heading', { name: 'Call for Papers', exact: true }).boundingBox();
