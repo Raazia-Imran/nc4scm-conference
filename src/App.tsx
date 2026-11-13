@@ -829,17 +829,9 @@ function Speakers() {
               <ul className="expertise-list">
                 {speaker.expertise.map((area) => <li key={area}>{area}</li>)}
               </ul>
-              <div className="speaker-value">
-                <h4>Why their expertise matters</h4>
-                <p>{speaker.attendeeValue}</p>
-              </div>
               <a className="button ghost" href={speaker.linkedin} target="_blank" rel="noopener noreferrer">
                 LinkedIn profile <ExternalLink size={15} />
               </a>
-              <div className="speaker-sources">
-                <span>Profile sources</span>
-                {speaker.sources.map((source) => <a key={source._key} href={source.url} target="_blank" rel="noopener noreferrer">{source.label} <ExternalLink size={11} /></a>)}
-              </div>
             </article>
           ))}
         </div>
