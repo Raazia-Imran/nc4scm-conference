@@ -39,7 +39,7 @@ test('conference poster is centered on white, displays the full image and opens 
   await expect(image).toBeVisible();
   await expect(image).toHaveAttribute('loading', 'eager');
   const link = page.getByRole('link', { name: 'Open full-size GCGC 2027 poster in a new tab' });
-  await expect(link).toHaveAttribute('href', '/images/gcgc-2027-poster.png');
+  await expect(link).toHaveAttribute('href', '/images/gcgc-2027-poster.avif');
   await expect(link).toHaveAttribute('target', '_blank');
   await expect(image).toHaveCSS('object-fit', 'contain');
   await expect(page.getByRole('link', { name: /Open full-size poster/i })).toHaveCount(0);
