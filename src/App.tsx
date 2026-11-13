@@ -852,7 +852,7 @@ function Speakers() {
 }
 
 function CallForPapers() {
-  const poster = (conferenceContent as typeof conferenceContent & {
+  const poster = (conferenceContent as Omit<typeof conferenceContent, "posterImage"> & {
     posterImage?: { url: string; alt: string; width?: number; height?: number } | null;
   }).posterImage ?? null;
   const [posterFailed, setPosterFailed] = useState(false);
