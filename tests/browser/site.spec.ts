@@ -16,6 +16,19 @@ test('all public routes load, contain distinct metadata, and unknown paths retur
   expect((await request.get('/sitemap.xml')).status()).toBe(200);
   expect(await (await request.get('/google6cebf148146998e0.html')).text()).toContain('google-site-verification: google6cebf148146998e0.html');
 });
+test('internal navigation resets scroll so the fixed header does not cover the destination heading', async ({ page }) => {
+  await page.goto('/programme');
+  await page.evaluate(() => window.scrollTo(0, 600));
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(0);
+  await page.getByRole('link', { name: 'Papers', exact: true }).click();
+  await expect(page).toHaveURL(/\/call-for-papers$/);
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0);
+  const header = await page.locator('.navigation-shell header').boundingBox();
+  const heading = await page.getByRole('heading', { name: 'Call for Papers', exact: true }).boundingBox();
+  expect(header).not.toBeNull();
+  expect(heading).not.toBeNull();
+  expect(heading!.y).toBeGreaterThan(header!.y + header!.height);
+});
 test('conference poster is centered on white, displays the full image and opens full-size in a new tab', async ({ page }) => {
   await page.goto('/call-for-papers');
   await expect(page.getByRole('heading', { name: 'Call for Papers', exact: true })).toBeVisible();

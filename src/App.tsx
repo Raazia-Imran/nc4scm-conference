@@ -48,6 +48,9 @@ function Header() {
   }, []);
   useEffect(() => {
     setOpen(false);
+    // React Router keeps the previous document scroll position between routes.
+    // Reset it so the fixed navigation cannot cover the next page's heading.
+    window.scrollTo(0, 0);
   }, [loc.pathname]);
   const headerNav = nav.filter(([, p]) => p !== "/" && p !== "/registration");
   return (
