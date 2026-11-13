@@ -8,18 +8,23 @@
       "_type": "keynoteProfile",
       "name": "Dr. Fernando Martirena",
       "initials": "FM",
-      "role": "Director, CIDEM · Head of LC3 Technical Resource Centre Latin America",
-      "affiliation": "Universidad Central “Marta Abreu” de Las Villas, Cuba",
-      "bio": "Fernando Martirena directs the Centre for Research and Development of Structures and Materials (CIDEM) at Universidad Central “Marta Abreu” de Las Villas in Cuba. A co-developer of Limestone Calcined Clay Cement (LC3), he works on sustainable construction materials, pozzolans and the practical use of low-carbon materials, including applications in social housing.",
+      "role": "Head of LC3 Technical Resource Centre Latin America · Principal Consultant",
+      "affiliation": "CalClay Europe, Portugal",
+      "bio": "A co-developer of Limestone Calcined Clay Cement (LC3), Fernando Martirena works on low-carbon binders, calcined clays and their industrial implementation. He brings research and consulting experience in turning sustainable construction materials into practical solutions.",
       "expertise": [
-        "Limestone Calcined Clay Cement (LC3)",
-        "Calcined clays and pozzolans",
-        "Sustainable construction materials",
-        "Research-to-industry implementation"
+        "LC3 and calcined clays",
+        "Low-carbon cement",
+        "Industrial implementation"
       ],
       "attendeeValue": "His expertise offers a practical perspective on taking low-carbon cement from research into production and construction, helping researchers and engineers connect material innovation with real applications.",
       "linkedin": "https://www.linkedin.com/in/fernando-martirena-baa16a54/",
       "sources": [
+        {
+          "_key": "linkedin",
+          "_type": "profileSource",
+          "label": "Professional profile",
+          "url": "https://www.linkedin.com/in/fernando-martirena-baa16a54/"
+        },
         {
           "_key": "lc3",
           "_type": "profileSource",
@@ -39,18 +44,23 @@
       "_type": "keynoteProfile",
       "name": "Dr. Sofía Sánchez Berriel",
       "initials": "SS",
-      "role": "Economist and LC3 researcher",
-      "affiliation": "Universidad Central “Marta Abreu” de Las Villas, Cuba",
-      "bio": "Sofía Sánchez Berriel is an economist at Universidad Central “Marta Abreu” de Las Villas in Cuba and a member of the LC3 research community. Her work examines the economic and environmental performance of cement and concrete, with a focus on low-carbon cement. Her research includes life cycle assessment and eco-efficiency studies that compare LC3 with conventional cement in the Cuban context.",
+      "role": "Economist · Sustainability Consultant",
+      "affiliation": "CalClay Europe, Portugal",
+      "bio": "Sofía Sánchez Berriel holds a PhD in Economics and specializes in the environmental and economic assessment of low-carbon cement. Her LC3 work connects life cycle assessment, eco-efficiency and investment evaluation to help assess sustainable construction options.",
       "expertise": [
-        "Life cycle assessment (LCA)",
+        "Life cycle assessment",
         "Economic and environmental assessment",
-        "Eco-efficiency of cement and concrete",
-        "Low-carbon cement adoption"
+        "Eco-efficiency"
       ],
       "attendeeValue": "Her expertise helps delegates assess both the environmental benefits and economic case for low-carbon cement, supporting more informed decisions about materials, investment and sustainable construction.",
       "linkedin": "https://www.linkedin.com/in/sofia-sanchez-8004663a/",
       "sources": [
+        {
+          "_key": "linkedin",
+          "_type": "profileSource",
+          "label": "Professional profile",
+          "url": "https://www.linkedin.com/in/sofia-sanchez-8004663a/"
+        },
         {
           "_key": "lc3",
           "_type": "profileSource",
