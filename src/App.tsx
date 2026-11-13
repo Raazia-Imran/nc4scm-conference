@@ -818,7 +818,13 @@ function Speakers() {
           {conferenceContent.keynoteProfiles.map((speaker) => (
             <article className="keynote-profile" key={speaker._key} aria-labelledby={speaker._key}>
               <div className="keynote-profile-top">
-                <span className="speaker-monogram" aria-hidden="true">{speaker.initials}</span>
+                <img
+                  className="speaker-photo"
+                  src={speaker._key === "fernando-martirena" ? "/speakers/fernando-martirena.webp" : "/speakers/sofia-sanchez.webp"}
+                  alt={`${speaker.name} portrait`}
+                  width="120"
+                  height="120"
+                />
                 <span className="eyebrow dark">KEYNOTE SPEAKER</span>
               </div>
               <h3 id={speaker._key}>{speaker.name}</h3>
@@ -835,7 +841,6 @@ function Speakers() {
             </article>
           ))}
         </div>
-        <p className="speaker-agenda-note">Keynote titles, session timings and additional speakers will be announced as the programme is finalized.</p>
       </section>
     </>
   );
