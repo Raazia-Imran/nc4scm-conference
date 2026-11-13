@@ -152,3 +152,15 @@ footer{font-size:14px}footer h4,.copyright{font-size:11px}
 .expertise-list li{font-size:12px;line-height:1.5;padding:7px 11px;border-radius:9px;background:#edf2eb;color:#244b43}
 .keynote-profile .button{padding:12px 16px}
 @media(max-width:760px){.keynote-profiles{grid-template-columns:1fr}.keynote-profile{padding:24px}.speaker-photo{width:92px;height:92px;flex-basis:92px}}
+
+/* Conference poster on the Call for Papers page */
+.conference-poster{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,360px);align-items:center;gap:clamp(36px,8vw,112px);background:var(--deep);color:#fff}
+.conference-poster-copy{max-width:550px}
+.conference-poster-copy h2{font-size:clamp(38px,5vw,66px);line-height:1.05;margin-bottom:18px}
+.conference-poster-copy p{color:#bfd0cb;max-width:42ch}
+.conference-poster-copy .button{margin-top:12px}
+.conference-poster-copy small{display:block;margin-top:14px;color:#aabbb9;font-size:12px}
+.conference-poster-image{display:block;width:100%;padding:10px;background:#fff;border-radius:8px;box-shadow:0 18px 50px #0005;transition:transform .25s ease}
+.conference-poster-image:hover{transform:translateY(-4px)}
+.conference-poster-image img{display:block;width:100%;height:auto}
+@media(max-width:700px){.conference-poster{grid-template-columns:1fr;gap:32px;padding-top:72px;padding-bottom:72px}.conference-poster-image{width:min(100%,360px);justify-self:center}}

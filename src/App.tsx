@@ -904,6 +904,20 @@ function CallForPapers() {
         title="Research with real-world consequence"
         copy="We invite original research advancing low-carbon construction materials, sustainable construction and applied practice"
       />
+      <section className="conference-poster section" aria-labelledby="conference-poster-title">
+        <div className="conference-poster-copy">
+          <span className="eyebrow dark">GCGC 2027 · EVENT POSTER</span>
+          <h2 id="conference-poster-title">The conference at a glance</h2>
+          <p>Explore the conference tracks, proposed key dates and who should attend.</p>
+          <a className="button" href="/images/gcgc-2027-poster.png" target="_blank" rel="noopener noreferrer">
+            Open full-size poster <ExternalLink size={16} />
+          </a>
+          <small>The full-resolution poster opens in a new tab.</small>
+        </div>
+        <a className="conference-poster-image" href="/images/gcgc-2027-poster.png" target="_blank" rel="noopener noreferrer" aria-label="Open the full-size GCGC 2027 poster in a new tab">
+          <img src="/images/gcgc-2027-poster.png" alt="GCGC 2027 conference poster, 16–17 April 2027 in Karachi" width="1152" height="2048" loading="lazy" />
+        </a>
+      </section>
       <section className="paper-intro section">
         <Reveal className="paper-statement">
           <span className="eyebrow dark">THE INVITATION</span>

@@ -16,6 +16,16 @@ test('all public routes load, contain distinct metadata, and unknown paths retur
   expect((await request.get('/sitemap.xml')).status()).toBe(200);
   expect(await (await request.get('/google6cebf148146998e0.html')).text()).toContain('google-site-verification: google6cebf148146998e0.html');
 });
+test('conference poster is available on the CFP page and opens full-size in a new tab', async ({ page }) => {
+  await page.goto('/call-for-papers');
+  await expect(page.getByRole('heading', { name: 'The conference at a glance' })).toBeVisible();
+  const image = page.getByRole('img', { name: /GCGC 2027 conference poster, 16–17 April 2027/ });
+  await expect(image).toBeVisible();
+  const link = page.getByRole('link', { name: 'Open full-size poster' });
+  await expect(link).toHaveAttribute('href', '/images/gcgc-2027-poster.png');
+  await expect(link).toHaveAttribute('target', '_blank');
+  await expect(page.locator('.conference-poster-image')).toHaveAttribute('target', '_blank');
+});
 test('monitoring stays off before choice; accept, withdraw, keyboard close and persist work', async ({ page, context }) => {
   // Mock only the performance script, never send measurements or enquiries to a provider.
   let scriptLoads = 0;
