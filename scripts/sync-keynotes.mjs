@@ -17,12 +17,12 @@ const validProfile = profile => profile &&
   Array.isArray(profile.sources) && profile.sources.length > 0 && profile.sources.every(source => source && typeof source._key === 'string' && typeof source.label === 'string' && safeUrl(source.url));
 try {
   const response = await fetch(url, { signal: AbortSignal.timeout(10000) });
-  if (!response.ok) throw Error(`CMS returned ${response.status}`);
+  if (!response.ok) throw new Error(`CMS returned ${response.status}`);
   const profiles = (await response.json()).result?.keynoteProfiles;
-  if (!Array.isArray(profiles) || profiles.length === 0 || !profiles.every(validProfile) || new Set(profiles.map(profile => profile._key)).size !== profiles.length) throw Error('Published keynote profiles are missing or invalid');
+  if (!Array.isArray(profiles) || profiles.length === 0 || !profiles.every(validProfile) || new Set(profiles.map(profile => profile._key)).size !== profiles.length) throw new Error('Published keynote profiles are missing or invalid');
   await writeFile(file, JSON.stringify({ ...snapshot, keynoteProfiles: profiles }, null, 2) + '\n');
-  console.log(`Loaded ${profiles.length} published Sanity keynote profiles.`);
-} catch (error) {
+  console.log('Loaded published Sanity keynote profiles.');
+} catch {
   // A CMS outage cannot take down the static conference site.
-  console.warn(`Using the reviewed keynote snapshot: ${error.message}`);
+  console.warn('Using the reviewed keynote snapshot because published CMS profiles were unavailable or invalid.');
 }
