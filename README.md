@@ -3,7 +3,7 @@
 Official website for the **Global Conference on Green Construction Materials and Practices (GCGC 2027)**, powered by the National Center for Sustainable Construction Materials (NC4SCM).
 
 - Live website: [gcgc.nc4scm.com](https://gcgc.nc4scm.com)
-- Conference dates: **10–11 April 2027**
+- Conference dates: **16–17 April 2027**
 - Conference city: **Karachi, Pakistan**
 - Official email: **nc4scm@cloud.neduet.edu.pk**
 
@@ -25,7 +25,7 @@ The interface is fully responsive and designed for desktop computers, tablets an
 | About | Purpose, values and connection between research, industry and climate action |
 | Call for Papers | Research tracks, submission workflow, requirements and downloadable author files |
 | Programme | Two-day programme layout ready for confirmed sessions and speakers |
-| Speakers | Keynote and invited-speaker layouts ready for approved profiles |
+| Speakers | Confirmed keynote profiles, expertise, attendee relevance and verified source links |
 | Registration | Registration categories and policies ready for confirmed fees |
 | Accommodation | Formal information for delegate accommodation support in Karachi |
 | Committees | Conference governance and committee categories |
@@ -63,7 +63,7 @@ Some areas intentionally use professional preview content until official details
 
 - EasyChair submission URL
 - Final conference venue and complete address
-- Speaker names, roles and photographs
+- Additional speakers, approved portraits and keynote session titles
 - Detailed programme sessions and timings
 - Registration fees and payment policies
 - Committee member names and affiliations
@@ -140,7 +140,9 @@ npm run preview
 ### Content maintenance
 
 - Update conference dates, navigation and research tracks in `src/data.ts` where applicable.
-- Page content and route components currently live in `src/App.tsx`.
+- Page content and route components live in `src/App.tsx`.
+- Keynote profiles are edited in the NC4SCM Sanity Studio under Events → GCGC 2027 → Keynote speaker profiles. Publish changes, then rebuild/redeploy this conference project. `scripts/sync-keynotes.mjs` reads only published public profiles at build time; the reviewed `src/conference-content.json` snapshot keeps builds usable during CMS outages. No write credential is used by the conference frontend.
+- Conference dates remain release-controlled in the application, metadata and JSON-LD. Update all of them together, including the sharing banner and main NC4SCM event/announcement.
 - Add images under `public/images/` and reference them as `/images/filename.ext`.
 - Add downloads under `public/downloads/` and reference them as `/downloads/filename.ext`.
 - Add new public routes to both the `nav` array and `<Routes>` configuration.
@@ -225,4 +227,4 @@ npm audit --audit-level=moderate
 
 The build updates `vercel.json` and `public/sitemap.xml` deterministically. Commit those generated changes before deployment. CI fails if they drift, because Vercel reads routing configuration before running the build. `npm run serve:check` serves built route files with the configured headers for local verification; it is a test harness and does not replace a Vercel preview check. `npm run preview` uses Vite's SPA fallback and cannot verify deployment 404 behavior.
 
-Privacy settings are in the footer and Cookies page. Performance monitoring is off by default and only activates after a saved permission; the site needs no intrusive banner. Withdrawal reloads the page to unload the optional script. Preferences expire after 180 days. Fonts are hosted locally with their licenses in `public/fonts/`. No registration, payment, account or CMS integration has been introduced.
+Privacy settings are in the footer and Cookies page. Performance monitoring is off by default and only activates after a saved permission; the site needs no intrusive banner. Withdrawal reloads the page to unload the optional script. Preferences expire after 180 days. Fonts are hosted locally with their licenses in `public/fonts/`. No registration, payment or account integration has been introduced. Keynote profiles use a public, build-time Sanity read with a reviewed local fallback.

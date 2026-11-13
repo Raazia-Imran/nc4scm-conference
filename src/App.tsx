@@ -32,6 +32,7 @@ import {
   X,
 } from "lucide-react";
 import { dates, nav, people, trackGroups } from "./data";
+import conferenceContent from "./conference-content.json";
 
 const img = (name: string) => `/images/${name}`;
 
@@ -52,7 +53,7 @@ function Header() {
   return (
     <div className={`navigation-shell ${scrolled ? "is-scrolled" : ""}`}>
       <div className="topbar">
-        <span>10–11 APRIL 2027 · KARACHI</span>
+        <span>16–17 APRIL 2027 · KARACHI</span>
         <a href="mailto:nc4scm@cloud.neduet.edu.pk">
           <Mail size={14} /> nc4scm@cloud.neduet.edu.pk
         </a>
@@ -144,7 +145,7 @@ function Footer() {
         <p>
           Karachi, Pakistan
           <br />
-          10–11 April 2027
+          16–17 April 2027
         </p>
         <a href="mailto:nc4scm@cloud.neduet.edu.pk">
           nc4scm@cloud.neduet.edu.pk
@@ -219,7 +220,7 @@ function Button({
   );
 }
 function Countdown() {
-  const target = new Date("2027-04-10T09:00:00+05:00").getTime();
+  const target = new Date("2027-04-16T00:00:00+05:00").getTime();
   const [left, setLeft] = useState(() => Math.max(0, target - Date.now()));
   useEffect(() => {
     const timer = window.setInterval(
@@ -236,7 +237,7 @@ function Countdown() {
     total % 60,
   ];
   return (
-    <div className="countdown" aria-label="Countdown to 10 April 2027">
+    <div className="countdown" aria-label="Countdown to 16 April 2027">
       {values.map((value, index) => (
         <div key={index}>
           <b>{String(value).padStart(2, "0")}</b>
@@ -418,7 +419,7 @@ function Home() {
             animate={{ opacity: 1 }}
             className="eyebrow"
           >
-            10–11 APRIL 2027 · KARACHI
+            16–17 APRIL 2027 · KARACHI
           </motion.span>
           <motion.h1
             className="conference-name"
@@ -610,7 +611,7 @@ function Home() {
           <span>Research areas</span>
         </div>
         <div>
-          <b>10–11</b>
+          <b>16–17</b>
           <span>April 2027</span>
         </div>
         <div>
@@ -803,56 +804,46 @@ function Speakers() {
   return (
     <>
       <PageHero
-        eyebrow="VISIONARY MINDS"
-        title="Speakers shaping material futures"
-        copy="Keynote speakers, plenary guests and industry voices will appear here as they are confirmed"
+        eyebrow="KEYNOTE SPEAKERS"
+        title="Expertise for a lower-carbon built environment"
+        copy="Meet the GCGC 2027 keynote speakers bringing complementary perspectives on low-carbon materials, practical implementation and sustainability assessment."
       />
-      <section className="speaker-showcase section">
-        <span className="outline-title">SPEAKERS</span>
+      <section className="speaker-showcase section" aria-labelledby="keynote-heading">
+        <span className="outline-title" aria-hidden="true">SPEAKERS</span>
         <div className="showcase-heading">
-          <span className="eyebrow dark">KEYNOTE SPEAKERS</span>
-          <h2>Meet the keynote speakers</h2>
+          <span className="eyebrow dark">16–17 APRIL 2027 · KARACHI</span>
+          <h2 id="keynote-heading">Meet the keynote speakers</h2>
         </div>
-        <div className="keynote-row">
-          {[1, 2, 3, 4].map((n) => (
-            <article className="keynote-card" key={n}>
-              <div className="portrait">
-                <span>
-                  TO BE
-                  <br />
-                  ANNOUNCED
-                </span>
+        <div className="keynote-profiles">
+          {conferenceContent.keynoteProfiles.map((speaker) => (
+            <article className="keynote-profile" key={speaker._key} aria-labelledby={speaker._key}>
+              <div className="keynote-profile-top">
+                <span className="speaker-monogram" aria-hidden="true">{speaker.initials}</span>
+                <span className="eyebrow dark">KEYNOTE SPEAKER</span>
               </div>
-              <div>
-                <b>Keynote speaker</b>
-                <small>Institution to be confirmed</small>
+              <h3 id={speaker._key}>{speaker.name}</h3>
+              <p className="speaker-role">{speaker.role}</p>
+              <p className="speaker-affiliation">{speaker.affiliation}</p>
+              <p>{speaker.bio}</p>
+              <h4>Areas of expertise</h4>
+              <ul className="expertise-list">
+                {speaker.expertise.map((area) => <li key={area}>{area}</li>)}
+              </ul>
+              <div className="speaker-value">
+                <h4>Why their expertise matters</h4>
+                <p>{speaker.attendeeValue}</p>
+              </div>
+              <a className="button ghost" href={speaker.linkedin} target="_blank" rel="noopener noreferrer">
+                LinkedIn profile <ExternalLink size={15} />
+              </a>
+              <div className="speaker-sources">
+                <span>Profile sources</span>
+                {speaker.sources.map((source) => <a key={source._key} href={source.url} target="_blank" rel="noopener noreferrer">{source.label} <ExternalLink size={11} /></a>)}
               </div>
             </article>
           ))}
         </div>
-        <div className="speaker-progress">
-          <span />
-          <button aria-label="Previous speakers">
-            <ArrowLeft />
-          </button>
-          <button aria-label="Next speakers">
-            <ArrowRight />
-          </button>
-        </div>
-        <h2 className="other-heading">Other speakers</h2>
-        <div className="other-speakers">
-          {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
-            <article key={n}>
-              <div className="mini-portrait">TBA</div>
-              <b>Speaker name</b>
-              <small>Role · Institution</small>
-            </article>
-          ))}
-        </div>
-        <p className="placeholder-note">
-          Preview layout only — all names, roles and photographs await official
-          confirmation
-        </p>
+        <p className="speaker-agenda-note">Keynote titles, session timings and additional speakers will be announced as the programme is finalized.</p>
       </section>
     </>
   );
@@ -1061,14 +1052,14 @@ function Programme() {
           <h2>Conference programme</h2>
         </div>
         <div className="day-tabs">
-          {["First Day · 27 April", "Second Day · 28 April"].map(
+          {["First Day · 16 April", "Second Day · 17 April"].map(
             (label, index) => (
               <button
                 className={day === index ? "active" : ""}
                 onClick={() => setDay(index)}
                 key={label}
               >
-                <small>{index === 0 ? "Tuesday" : "Wednesday"}</small>
+                <small>{index === 0 ? "Friday" : "Saturday"}</small>
                 <b>{label}</b>
               </button>
             ),
@@ -1465,7 +1456,7 @@ function Accommodation() {
       <PageHero
         eyebrow="PLAN YOUR STAY"
         title="Accommodation for GCGC 2027 delegates"
-        copy="Practical stay information for conference participants travelling to Karachi for 10–11 April 2027."
+        copy="Practical stay information for conference participants travelling to Karachi for 16–17 April 2027."
       />
       <section className="accommodation section">
         <Reveal className="accommodation-intro">
@@ -1544,7 +1535,7 @@ function Contact() {
             <CalendarDays />
             <div>
               <small>CONFERENCE DATES</small>
-              <b>10–11 April 2027</b>
+              <b>16–17 April 2027</b>
             </div>
           </div>
           <div className="contact-fact">
