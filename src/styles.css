@@ -164,3 +164,89 @@ footer{font-size:14px}footer h4,.copyright{font-size:11px}
 .conference-poster-image:hover{transform:translateY(-4px)}
 .conference-poster-image img{display:block;width:100%;height:auto}
 @media(max-width:700px){.conference-poster{grid-template-columns:1fr;gap:32px;padding-top:72px;padding-bottom:72px}.conference-poster-image{width:min(100%,360px);justify-self:center}}
+
+
+/* Call for Papers: poster-first layout with a light, centered presentation. */
+.call-for-papers-hero {
+  min-height: 0;
+  padding: clamp(42px, 5vw, 66px) 24px 22px;
+  background: #fff;
+  color: var(--ink);
+  text-align: center;
+}
+.call-for-papers-hero:after,
+.call-for-papers-hero .grain {
+  display: none;
+}
+.call-for-papers-hero > div {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.call-for-papers-hero .eyebrow {
+  color: #527b68;
+  margin-bottom: 12px;
+}
+.call-for-papers-hero h1 {
+  max-width: none;
+  margin: 0 0 9px;
+  color: var(--ink);
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.08;
+  text-transform: none;
+}
+.call-for-papers-hero p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #52645e;
+  font-size: 15px;
+}
+.conference-poster {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(34px, 5vw, 64px) 24px clamp(76px, 8vw, 104px);
+  background: #fff;
+  color: var(--ink);
+}
+.conference-poster-image {
+  display: block;
+  width: min(100%, 390px);
+  margin: 0 auto;
+  padding: 8px;
+  border: 8px solid #8eae84;
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 0 0 0 3px #0b2b2e, 0 18px 45px rgba(7, 28, 32, .16);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.conference-poster-image:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 0 3px #0b2b2e, 0 24px 52px rgba(7, 28, 32, .2);
+}
+.conference-poster-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border: 5px double #0b2b2e;
+  background: #fff;
+}
+@media (max-width: 700px) {
+  .call-for-papers-hero {
+    padding: 42px 22px 14px;
+  }
+  .call-for-papers-hero h1 {
+    font-size: clamp(30px, 9vw, 40px);
+  }
+  .conference-poster {
+    padding: 24px 22px 64px;
+  }
+  .conference-poster-image {
+    width: min(100%, 360px);
+    padding: 6px;
+    border-width: 6px;
+  }
+  .conference-poster-image img {
+    border-width: 4px;
+  }
+}
