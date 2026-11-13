@@ -259,3 +259,34 @@ footer{font-size:14px}footer h4,.copyright{font-size:11px}
     border-width: 4px;
   }
 }
+
+
+/* Sanity-managed conference poster: show a graceful state until the approved asset is published. */
+.conference-poster-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 390px);
+  min-height: 250px;
+  padding: 38px 28px;
+  border: 2px dashed #8eae84;
+  border-radius: 3px;
+  background: #f7f8f3;
+  text-align: center;
+}
+.conference-poster-placeholder .eyebrow {
+  margin-bottom: 16px;
+}
+.conference-poster-placeholder h2 {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-size: clamp(24px, 3vw, 32px);
+  line-height: 1.1;
+}
+.conference-poster-placeholder p {
+  max-width: 300px;
+  margin: 0;
+  color: #52645e;
+  font-size: 13px;
+}
