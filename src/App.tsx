@@ -916,16 +916,16 @@ function CallForPapers() {
         {!posterFailed ? (
           <a
             className="conference-poster-image"
-            href="/images/gcgc-2027-poster.png"
+            href="/images/gcgc-2027-poster.webp"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Open full-size GCGC 2027 poster in a new tab"
           >
             <img
-              src="/images/gcgc-2027-poster.png"
+              src="/images/gcgc-2027-poster.webp"
               alt="GCGC 2027 conference poster, 16–17 April 2027 in Karachi"
-              width="1152"
-              height="2048"
+              width="1080"
+              height="1920"
               loading="eager"
               decoding="async"
               onError={() => setPosterFailed(true)}

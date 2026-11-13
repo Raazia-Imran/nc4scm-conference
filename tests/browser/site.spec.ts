@@ -45,10 +45,10 @@ test('conference poster uses a local repository asset and opens full-size in a n
   const placeholder = page.locator('.conference-poster-placeholder');
   if (await image.count()) {
     await expect(image).toBeVisible();
-    await expect(image).toHaveAttribute('src', '/images/gcgc-2027-poster.png');
+    await expect(image).toHaveAttribute('src', '/images/gcgc-2027-poster.webp');
     expect(await image.evaluate((element: HTMLImageElement) => element.naturalWidth)).toBeGreaterThan(0);
     const link = page.locator('.conference-poster-image');
-    await expect(link).toHaveAttribute('href', '/images/gcgc-2027-poster.png');
+    await expect(link).toHaveAttribute('href', '/images/gcgc-2027-poster.webp');
     await expect(link).toHaveAttribute('target', '_blank');
     await expect(image).toHaveCSS('object-fit', 'contain');
   } else {

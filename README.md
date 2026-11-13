@@ -142,7 +142,7 @@ npm run preview
 - Update conference dates, navigation and research tracks in `src/data.ts` where applicable.
 - Page content and route components live in `src/App.tsx`.
 - Keynote profiles are read from the existing NC4SCM public Sanity dataset at build time by `scripts/sync-keynotes.mjs`; the reviewed `src/conference-content.json` snapshot keeps builds usable during CMS outages. The GCGC conference website itself is a static React/Vite site and does not have a separate poster CMS or Sanity Studio.
-- The Call for Papers poster is a static repository asset. Replace `public/images/gcgc-2027-poster.png` with the approved full-size artwork (keep the same filename), commit it, and redeploy. The page links directly to that local file in a new tab and preserves its original aspect ratio. If the file is absent or fails to load, an accessible placeholder appears instead of a broken image.
+- The Call for Papers poster is a static repository asset. Replace `public/images/gcgc-2027-poster.webp` with the approved full-size artwork (keep the same filename and WebP format), commit it, and redeploy. The page links directly to that local file in a new tab and preserves its original aspect ratio. If the file is absent or fails to load, an accessible placeholder appears instead of a broken image.
 - Conference dates remain release-controlled in the application, metadata and JSON-LD. Update all of them together, including the sharing banner and main NC4SCM event/announcement.
 - Add other static site images under `public/images/` and reference them as `/images/filename.ext`.
 - Add downloads under `public/downloads/` and reference them as `/downloads/filename.ext`.
