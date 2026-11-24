@@ -29,29 +29,29 @@ A public information website connecting materials research, sustainable construc
 
 ## Website preview 🖼️
 
-![Desktop homepage — local source preview](docs/screenshots/home-desktop.jpg)
+![Desktop homepage — local source preview](documents/screenshots/home-desktop.jpg)
 
 | Keynote speakers | Call for Papers |
 | --- | --- |
-| ![Speaker page — local source preview](docs/screenshots/speakers-desktop.jpg) | ![Poster page — local source preview](docs/screenshots/call-for-papers-desktop.jpg) |
+| ![Speaker page — local source preview](documents/screenshots/speakers-desktop.jpg) | ![Poster page — local source preview](documents/screenshots/call-for-papers-desktop.jpg) |
 
 <details>
 <summary>📱 Mobile homepage preview</summary>
 
-<img src="docs/screenshots/home-mobile.jpg" alt="Mobile homepage, local source preview at 390 pixels wide" width="300" />
+<img src="documents/screenshots/home-mobile.jpg" alt="Mobile homepage, local source preview at 390 pixels wide" width="300" />
 
 </details>
 
-*Captured from the current source build for this handover; see [capture provenance](docs/screenshots/README.md). Images are previews of implementation, not evidence of production availability.*
+*Captured from the current source build for this handover; see [capture provenance](documents/screenshots/README.md). Images are previews of implementation, not evidence of production availability.*
 
 ## Start here 🧭
 
 | Reader | Guide |
 | --- | --- |
-| Next AI assistant / project owner | [Project handover](docs/PROJECT-HANDOVER.md) · [Pasteable resume prompt](docs/RESUME-HERE.md) |
-| Developer | [Developer guide](docs/DEVELOPER-GUIDE.md) · [Combined PDF](docs/GCGC_2027_Handover.pdf) · [Check and delivery status](docs/DELIVERY-STATUS.md) |
-| Visitors / organizers | [User manual](docs/USER-MANUAL.md) |
-| Release maintainer | [Historical security, privacy and SEO audit](docs/SECURITY-PRIVACY-SEO-AUDIT.md) |
+| Next AI assistant / project owner | [Project handover](documents/PROJECT-HANDOVER.md) · [Pasteable resume prompt](documents/RESUME-HERE.md) |
+| Developer | [Developer guide](documents/DEVELOPER-GUIDE.md) · [Combined PDF](documents/GCGC_2027_Handover.pdf) · [Check and delivery status](documents/DELIVERY-STATUS.md) |
+| Visitors / organizers | [User manual](documents/USER-MANUAL.md) |
+| Release maintainer | [Historical security, privacy and SEO audit](documents/SECURITY-PRIVACY-SEO-AUDIT.md) |
 
 ## Quick start ⚡
 
@@ -277,7 +277,7 @@ The website includes the approved Karachi dates, research tracks, author downloa
 
 ## Security, privacy and release verification
 
-Read [the audit and handover](docs/SECURITY-PRIVACY-SEO-AUDIT.md) before merging or publishing. It records evidence, remaining account checks, client decisions and rollback steps. The baseline live deployment is separate from the proposed branch; a passing local test is not a production verification.
+Read [the audit and handover](documents/SECURITY-PRIVACY-SEO-AUDIT.md) before merging or publishing. It records evidence, remaining account checks, client decisions and rollback steps. The baseline live deployment is separate from the proposed branch; a passing local test is not a production verification.
 
 ```bash
 npm ci

@@ -1,5 +1,7 @@
 # GCGC 2027 · Checkpoint results and delivery
 
+> Storage update, 25 November 2026: Read [STORAGE-UPDATE.md](STORAGE-UPDATE.md) first. The local Source checkout is being retired after verified repository preservation; current materials live in documents on GitHub. Older working-copy and publication statements below are checkpoint history.
+
 Checkpoint date: 24 November 2026, Asia/Karachi. Application baseline: df08a481753c7236a3025c3923eebd23b727b4f8.
 
 ## Scope

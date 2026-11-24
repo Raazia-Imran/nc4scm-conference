@@ -1,0 +1,66 @@
+{
+  "date": "2026-11-25",
+  "scope": "Exact original local assets and source archives retained before local cleanup",
+  "files": [
+    {
+      "source_name": "gcgc-2027-16-17-april.png",
+      "repository_path": "documents/assets/gcgc-2027-16-17-april.png",
+      "bytes": 79876,
+      "sha256": "425bc9a8acd55b852f4b67e601889b49562683495d2defaba33fca8d6add558c"
+    },
+    {
+      "source_name": "GCGC_2027_Editable_Canva_Poster.pptx",
+      "repository_path": "documents/assets/GCGC_2027_Editable_Canva_Poster.pptx",
+      "bytes": 222626,
+      "sha256": "eef4534510a98c8d0ee13dbf9fa9cf8a85a1de1baeda7e2c375b38af46b24a96"
+    },
+    {
+      "source_name": "GCGC_2027_Poster.pptx (1).png",
+      "repository_path": "documents/assets/GCGC_2027_Poster.pptx_1.png",
+      "bytes": 5039376,
+      "sha256": "0e668541471d24e22c25514634473222597e0fae976499ad02325c094a87b99f"
+    },
+    {
+      "source_name": "GCGC_2027_Poster.pptx (2).png",
+      "repository_path": "documents/assets/GCGC_2027_Poster.pptx_2.png",
+      "bytes": 1885920,
+      "sha256": "ebd27a48d61dcb505b935cc599559a3490217f634e05ee56bb0cf34b68e51be8"
+    },
+    {
+      "source_name": "GCGC_2027_Poster.pptx (3).png",
+      "repository_path": "documents/assets/GCGC_2027_Poster.pptx_3.png",
+      "bytes": 1693843,
+      "sha256": "b3f461cad59d7549747b15fb0c9426152f8136eefe491da5fae427a6759eb8c0"
+    },
+    {
+      "source_name": "GCGC_2027_Poster.pptx (4).png",
+      "repository_path": "documents/assets/GCGC_2027_Poster.pptx_4.png",
+      "bytes": 1694517,
+      "sha256": "322ed8da9fffc484c15fd68ebb8b838f60e9afe51f783322c92c8604c8b1cfb4"
+    },
+    {
+      "source_name": "GCGC_2027_Poster.pptx.pdf",
+      "repository_path": "documents/assets/GCGC_2027_Poster.pptx.pdf",
+      "bytes": 6146687,
+      "sha256": "d8d96f6f10a6d77b74911f4eefa57211327deebb0039896a2e33b629187ab115"
+    },
+    {
+      "source_name": "GCGC_2027_Poster.pptx.png",
+      "repository_path": "documents/assets/GCGC_2027_Poster.pptx.png",
+      "bytes": 1517925,
+      "sha256": "a809a18d4fd929b4ffecc4364119ff32c66624371d981c56e39e5021f62f4454"
+    },
+    {
+      "source_name": "Original_Conference_Source_Archive.zip",
+      "repository_path": "documents/archive/Original_Conference_Source_Archive.zip",
+      "bytes": 1034087,
+      "sha256": "987273a3063fa8ed62b29f6f29bb15703a1b147fc9a4ced3531c719e5b700268"
+    },
+    {
+      "source_name": "Original_Local_Source_2026-09-19.zip",
+      "repository_path": "documents/archive/Original_Local_Source_2026-09-19.zip",
+      "bytes": 5191361,
+      "sha256": "e6d24eebdc4b1bd0a621cae5c88016b08cae5f1ca7b741c2e998da32c1784615"
+    }
+  ]
+}

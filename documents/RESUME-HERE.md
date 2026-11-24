@@ -1,5 +1,7 @@
 # Paste this into the next AI assistant
 
+> Storage update, 25 November 2026: Read [STORAGE-UPDATE.md](STORAGE-UPDATE.md) first. The local Source checkout is being retired after verified repository preservation; current materials live in documents on GitHub. Older working-copy and publication statements below are checkpoint history.
+
 You are continuing GCGC 2027, the conference website at https://gcgc.nc4scm.com, repository https://github.com/Raazia-Imran/nc4scm-conference. Read docs/PROJECT-HANDOVER.md, docs/DEVELOPER-GUIDE.md, docs/USER-MANUAL.md and docs/DELIVERY-STATUS.md before editing. Inspect current instructions, git status and latest main. Do not assume this checkpoint is current after 24 November 2026.
 
 VERIFIED FROM REPOSITORY: Application baseline df08a481753c7236a3025c3923eebd23b727b4f8; React/Vite/TypeScript, static website, 14 public metadata routes. Current dates 16–17 April 2027, Karachi. Poster is public/images/gcgc-2027-poster.webp, a static linked image opening in a new tab. Keynotes alone come from public published NC4SCM Sanity event-gcgc-2027 at build time, with a reviewed JSON fallback. No separate conference Studio, payment backend or working EasyChair URL.

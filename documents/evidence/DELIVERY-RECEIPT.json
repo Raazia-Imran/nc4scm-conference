@@ -1,0 +1,103 @@
+{
+  "date": "2026-11-25",
+  "destination": "D:\\PROJECTS DATA\\GCGC 2027",
+  "source_commit": "8823bc8875dcbb8a2fe842fc58c043383a667e98",
+  "application_baseline": "df08a481753c7236a3025c3923eebd23b727b4f8",
+  "pr": "https://github.com/Raazia-Imran/nc4scm-conference/pull/38",
+  "pr_state": "draft, open, unmerged",
+  "pdf_sha256_match": true,
+  "local_source_status": " M public/sitemap.xml\n M src/conference-content.json\n M vercel.json\n",
+  "note": "Generated Windows files may show modified after CRLF conversion. Application code was not edited by this handover. Editable original poster retains superseded dates.",
+  "files": [
+    {
+      "path": "Documents\\DELIVERY-STATUS.md",
+      "bytes": 4163,
+      "sha256": "6b133ab0ec9f0ea73bd6dfc114a0e952812274233a08df1c3b01e3fe268ea154"
+    },
+    {
+      "path": "Documents\\DEVELOPER-GUIDE.md",
+      "bytes": 11283,
+      "sha256": "5d0a24580238669ce254b814e2aea295fb806867321dd18b97f4a0a1781cc000"
+    },
+    {
+      "path": "Documents\\GCGC_2027_Documentation.patch",
+      "bytes": 685054,
+      "sha256": "a36547dbbe78587ee9175d4061f75d08e2152deff8b097251d4b7ce3bf461024"
+    },
+    {
+      "path": "Documents\\GCGC_2027_Handover.pdf",
+      "bytes": 627454,
+      "sha256": "b04757f720bd485131c12a529f2a9f5cb28a658264bb3349c988332bcaa1c321"
+    },
+    {
+      "path": "Documents\\PROJECT-HANDOVER.md",
+      "bytes": 18591,
+      "sha256": "976e5a6c75a2ed9d1a5e484000e5e100f47c4c87e3bebf4d44102f49fd69b39b"
+    },
+    {
+      "path": "Documents\\README-BEFORE-2026-11-24.md",
+      "bytes": 12297,
+      "sha256": "0be35206944ef2468bb42f45b98e9b84591ce2baa2f5f5ccce092931cd560bc9"
+    },
+    {
+      "path": "Documents\\README-REPOSITORY.md",
+      "bytes": 15657,
+      "sha256": "d8b84ec4e2917810fb7ec3ef259b705a7674fc51fb22afe0ebb556c3ed59845a"
+    },
+    {
+      "path": "Documents\\RESUME-HERE.md",
+      "bytes": 2029,
+      "sha256": "9d6d52777004f0b50faaad650ab91b7b4ce0834ab3ee563fdea3622609cac103"
+    },
+    {
+      "path": "Documents\\SECURITY-PRIVACY-SEO-AUDIT.md",
+      "bytes": 25296,
+      "sha256": "90c325f6df123fee4f9c0d7ffd59f885154f25ebccc8857193da62e3cfb0fe7d"
+    },
+    {
+      "path": "Documents\\USER-MANUAL.md",
+      "bytes": 7243,
+      "sha256": "bfcfb0d131f6777d851ab31dbd2e93e7ea3e9f8f703a122b1edea9aee9ce6f44"
+    },
+    {
+      "path": "Assets\\gcgc-2027-16-17-april.png",
+      "bytes": 79876,
+      "sha256": "425bc9a8acd55b852f4b67e601889b49562683495d2defaba33fca8d6add558c"
+    },
+    {
+      "path": "Assets\\GCGC_2027_Editable_Canva_Poster.pptx",
+      "bytes": 222626,
+      "sha256": "eef4534510a98c8d0ee13dbf9fa9cf8a85a1de1baeda7e2c375b38af46b24a96"
+    },
+    {
+      "path": "Assets\\GCGC_2027_Poster.pptx (1).png",
+      "bytes": 5039376,
+      "sha256": "0e668541471d24e22c25514634473222597e0fae976499ad02325c094a87b99f"
+    },
+    {
+      "path": "Assets\\GCGC_2027_Poster.pptx (2).png",
+      "bytes": 1885920,
+      "sha256": "ebd27a48d61dcb505b935cc599559a3490217f634e05ee56bb0cf34b68e51be8"
+    },
+    {
+      "path": "Assets\\GCGC_2027_Poster.pptx (3).png",
+      "bytes": 1693843,
+      "sha256": "b3f461cad59d7549747b15fb0c9426152f8136eefe491da5fae427a6759eb8c0"
+    },
+    {
+      "path": "Assets\\GCGC_2027_Poster.pptx (4).png",
+      "bytes": 1694517,
+      "sha256": "322ed8da9fffc484c15fd68ebb8b838f60e9afe51f783322c92c8604c8b1cfb4"
+    },
+    {
+      "path": "Assets\\GCGC_2027_Poster.pptx.pdf",
+      "bytes": 6146687,
+      "sha256": "d8d96f6f10a6d77b74911f4eefa57211327deebb0039896a2e33b629187ab115"
+    },
+    {
+      "path": "Assets\\GCGC_2027_Poster.pptx.png",
+      "bytes": 1517925,
+      "sha256": "a809a18d4fd929b4ffecc4364119ff32c66624371d981c56e39e5021f62f4454"
+    }
+  ]
+}

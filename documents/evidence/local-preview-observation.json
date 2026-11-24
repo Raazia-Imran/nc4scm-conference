@@ -1,0 +1,32 @@
+[
+  {
+    "name": "home",
+    "url": "http://127.0.0.1:4173/",
+    "httpStatus": 200,
+    "title": "GCGC 2027 | Green Construction Materials Conference",
+    "heading": [
+      "GCGC 2027"
+    ],
+    "capturedAt": "2026-11-24T12:52:44.804Z"
+  },
+  {
+    "name": "speakers",
+    "url": "http://127.0.0.1:4173/speakers",
+    "httpStatus": 200,
+    "title": "Speakers | GCGC 2027",
+    "heading": [
+      "Expertise for a lower-carbon built environment"
+    ],
+    "capturedAt": "2026-11-24T12:52:48.336Z"
+  },
+  {
+    "name": "call-for-papers",
+    "url": "http://127.0.0.1:4173/call-for-papers",
+    "httpStatus": 200,
+    "title": "Call for Papers | GCGC 2027",
+    "heading": [
+      "Call for Papers"
+    ],
+    "capturedAt": "2026-11-24T12:52:52.037Z"
+  }
+]

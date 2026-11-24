@@ -1,5 +1,7 @@
 # GCGC 2027 · Developer guide
 
+> Storage update, 25 November 2026: Read [STORAGE-UPDATE.md](STORAGE-UPDATE.md) first. The local Source checkout is being retired after verified repository preservation; current materials live in documents on GitHub. Older working-copy and publication statements below are checkpoint history.
+
 Checkpoint: 24 November 2026. Implementation details below are VERIFIED FROM REPOSITORY at application baseline df08a481753c7236a3025c3923eebd23b727b4f8 unless explicitly marked otherwise. Begin with PROJECT-HANDOVER.md and DELIVERY-STATUS.md.
 
 ## 1. Working copies and setup
