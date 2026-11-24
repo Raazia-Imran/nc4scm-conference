@@ -1,24 +1,45 @@
-
+// Replay local previews after npm ci and npm run build.
+// Run npm run serve:check, install Playwright Chromium, then run this file.
+// New captures go into replay-output; the original evidence is preserved in git history.
 const fs = require('node:fs');
 const path = require('node:path');
-const { chromium } = require(path.join(process.env.TEMP, 'gcgc-handover-tools-20261124', 'node_modules/playwright'));
-(async () => {
-const browser = await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
-const page = await browser.newPage({viewport:{width:1440,height:1000},deviceScaleFactor:1});
-const records=[];
-for (const [name,route,selector] of [['home','/','.hero'],['speakers','/speakers','.speaker-showcase'],['call-for-papers','/call-for-papers','.conference-poster']]) {
- try {
- const response=await page.goto('http://127.0.0.1:4173'+route,{waitUntil:'networkidle',timeout:45000});
- await page.evaluate(()=>document.fonts.ready); await page.waitForTimeout(1600);
- if(name!=='home') await page.locator(selector).scrollIntoViewIfNeeded();
- await page.waitForTimeout(900);
- await page.screenshot({quality:78,path:path.join(__dirname,name+'-desktop.jpg')});
- records.push({name,url:page.url(),httpStatus:response.status(),title:await page.title(),heading:await page.locator('h1').allTextContents(),capturedAt:new Date().toISOString()});
- } catch(e) {records.push({name,error:e.message});}
+const { chromium } = require('playwright');
+
+const output = path.join(__dirname, 'replay-output');
+const views = [
+  { name: 'home-desktop', route: '/', width: 1440, height: 1000 },
+  { name: 'speakers-desktop', route: '/speakers', selector: '.speaker-showcase', width: 1440, height: 1000 },
+  { name: 'call-for-papers-desktop', route: '/call-for-papers', selector: '.conference-poster', width: 1440, height: 1000 },
+  { name: 'home-mobile', route: '/', width: 390, height: 844 },
+];
+
+async function captureView(browser, view) {
+  const page = await browser.newPage({ viewport: { width: view.width, height: view.height }, deviceScaleFactor: 1 });
+  try {
+    const response = await page.goto('http://127.0.0.1:4173' + view.route, { waitUntil: 'networkidle', timeout: 45000 });
+    await page.evaluate(() => document.fonts.ready);
+    if (view.selector) await page.locator(view.selector).scrollIntoViewIfNeeded();
+    await page.waitForTimeout(1600);
+    await page.screenshot({ path: path.join(output, view.name + '.jpg'), quality: 78, animations: 'disabled' });
+    return { name: view.name, url: page.url(), httpStatus: response.status(), title: await page.title(), capturedAt: new Date().toISOString() };
+  } finally {
+    await page.close();
+  }
 }
-await page.setViewportSize({width:390,height:844});
-await page.goto('http://127.0.0.1:4173',{waitUntil:'networkidle',timeout:45000});
-await page.waitForTimeout(1800); await page.screenshot({quality:78,path:path.join(__dirname,'home-mobile.jpg')});
-fs.writeFileSync(path.join(__dirname,'local-preview-observation.json'),JSON.stringify(records,null,2));
-console.log(JSON.stringify(records,null,2)); await browser.close();
-})().catch(e=>{console.error(e);process.exit(1)});
+
+async function main() {
+  fs.mkdirSync(output, { recursive: true });
+  const browser = await chromium.launch({ headless: true });
+  try {
+    const records = await Promise.all(views.map(view => captureView(browser, view)));
+    fs.writeFileSync(path.join(output, 'local-preview-observation.json'), JSON.stringify(records, null, 2) + '\n');
+    console.log('Saved local replay captures to', output);
+  } finally {
+    await browser.close();
+  }
+}
+
+main().catch(error => {
+  console.error(error.message);
+  process.exitCode = 1;
+});
