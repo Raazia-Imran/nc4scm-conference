@@ -1,4 +1,68 @@
-# GCGC 2027 Conference Website
+<div align="center">
+
+![GCGC 2027 conference banner](public/og-banner.png)
+
+# GCGC 2027
+### Global Conference on Green Construction Materials and Practices
+
+**16–17 April 2027 · Karachi, Pakistan**
+Powered by the National Center for Sustainable Construction Materials
+
+[![React](https://img.shields.io/badge/React-19-149eca?logo=react&logoColor=white)](package.json)
+[![TypeScript](https://img.shields.io/badge/TypeScript-7-3178c6?logo=typescript&logoColor=white)](package.json)
+[![Vite](https://img.shields.io/badge/Vite-8-646cff?logo=vite&logoColor=white)](package.json)
+[![Node](https://img.shields.io/badge/Node-%E2%89%A522.12-339933?logo=nodedotjs&logoColor=white)](package.json)
+[![Vercel configuration](https://img.shields.io/badge/Deployment-Vercel-111111?logo=vercel)](vercel.json)
+[![Content](https://img.shields.io/badge/Keynotes-Sanity%20at%20build-ef443b?logo=sanity&logoColor=white)](scripts/sync-keynotes.mjs)
+
+[**🌐 Visit website**](https://gcgc.nc4scm.com) · [**📄 Call for Papers**](https://gcgc.nc4scm.com/call-for-papers) · [**🎤 Speakers**](https://gcgc.nc4scm.com/speakers) · [**✉ Contact**](https://gcgc.nc4scm.com/contact)
+
+</div>
+
+---
+
+## A conference platform for greener construction 🌱
+
+A public information website connecting materials research, sustainable construction and applied practice. Explore **3 conference tracks**, **9 research areas**, author resources, keynote profiles and the **GCGC 2025 archive**.
+
+> **Checkpoint · 24 November 2026:** application source reviewed at `df08a48`. Programme, fees, final venue/address, committees, partners, accommodation and the dedicated submission URL still need organizer confirmation. Live deployment and enquiry delivery are not certified by this README. Screenshots below show a local preview of the inspected source.
+
+## Website preview 🖼️
+
+![Desktop homepage — local source preview](documents/screenshots/home-desktop.jpg)
+
+| Keynote speakers | Call for Papers |
+| --- | --- |
+| ![Speaker page — local source preview](documents/screenshots/speakers-desktop.jpg) | ![Poster page — local source preview](documents/screenshots/call-for-papers-desktop.jpg) |
+
+<details>
+<summary>📱 Mobile homepage preview</summary>
+
+<img src="documents/screenshots/home-mobile.jpg" alt="Mobile homepage, local source preview at 390 pixels wide" width="300" />
+
+</details>
+
+*Captured from the current source build for this handover; see [capture provenance](documents/screenshots/README.md). Images are previews of implementation, not evidence of production availability.*
+
+## Start here 🧭
+
+| Reader | Guide |
+| --- | --- |
+| Next AI assistant / project owner | [Project handover](documents/PROJECT-HANDOVER.md) · [Pasteable resume prompt](documents/RESUME-HERE.md) |
+| Developer | [Developer guide](documents/DEVELOPER-GUIDE.md) · [Combined PDF](documents/GCGC_2027_Handover.pdf) · [Check and delivery status](documents/DELIVERY-STATUS.md) |
+| Visitors / organizers | [User manual](documents/USER-MANUAL.md) |
+| Release maintainer | [Historical security, privacy and SEO audit](documents/SECURITY-PRIVACY-SEO-AUDIT.md) |
+
+## Quick start ⚡
+
+```bash
+npm ci --ignore-scripts
+npm run dev
+```
+
+Node **>=22.12.0** is required; CI uses Node 24. No frontend secret, custom database or standalone conference Sanity Studio is needed. Most conference content is maintained in source; keynote text is read from the public NC4SCM Sanity event during builds with a reviewed fallback.
+
+---
 
 Official website for the **Global Conference on Green Construction Materials and Practices (GCGC 2027)**, powered by the National Center for Sustainable Construction Materials (NC4SCM).
 
@@ -25,7 +89,7 @@ The interface is fully responsive and designed for desktop computers, tablets an
 | About | Purpose, values and connection between research, industry and climate action |
 | Call for Papers | Research tracks, submission workflow, requirements and downloadable author files |
 | Programme | Two-day programme layout ready for confirmed sessions and speakers |
-| Speakers | Confirmed keynote profiles, expertise, attendee relevance and verified source links |
+| Speakers | Keynote biographies, expertise, portraits and LinkedIn links |
 | Registration | Registration categories and policies ready for confirmed fees |
 | Accommodation | Formal information for delegate accommodation support in Karachi |
 | Committees | Conference governance and committee categories |
@@ -117,7 +181,7 @@ The project is a client-side React single-page application with multiple public 
 │   ├── data.ts                # Navigation, dates, tracks and shared data
 │   ├── main.tsx               # React application entry point
 │   └── styles.css             # Global and responsive styling
-├── vercel.json                # Build settings, security headers and SPA rewrite
+├── vercel.json                # Generated route rewrites and security headers
 └── package.json
 ```
 
@@ -213,7 +277,7 @@ The website includes the approved Karachi dates, research tracks, author downloa
 
 ## Security, privacy and release verification
 
-Read [the audit and handover](docs/SECURITY-PRIVACY-SEO-AUDIT.md) before merging or publishing. It records evidence, remaining account checks, client decisions and rollback steps. The baseline live deployment is separate from the proposed branch; a passing local test is not a production verification.
+Read [the audit and handover](documents/SECURITY-PRIVACY-SEO-AUDIT.md) before merging or publishing. It records evidence, remaining account checks, client decisions and rollback steps. The baseline live deployment is separate from the proposed branch; a passing local test is not a production verification.
 
 ```bash
 npm ci
